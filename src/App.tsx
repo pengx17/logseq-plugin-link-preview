@@ -68,7 +68,7 @@ function App() {
   const loading = debouncedAnchor && (!data || !error);
 
   React.useEffect(() => {
-    if (data && debouncedAnchor) {
+    if (data && debouncedAnchor && data.contentType === "text/html") {
       logseq.showMainUI();
       const elemBoundingRect = debouncedAnchor.getBoundingClientRect();
       const width = data.images.length > 0 ? 720 : 400;

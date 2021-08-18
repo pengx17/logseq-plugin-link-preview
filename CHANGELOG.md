@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.0.0...v1.0.1) (2021-08-18)
+
+
+### Bug Fixes
+
+* only handle contentType === "text/html" ([a3452fc](https://github.com/pengx17/logseq-plugin-link-preview/commit/a3452fced941c5107f9123bdaf30ed3d56ee92b7))
+
 # 1.0.0 (2021-08-18)
 
 

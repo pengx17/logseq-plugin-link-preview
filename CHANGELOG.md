@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.0.1...v1.1.0) (2021-08-19)
+
+
+### Features
+
+* make it more responsive ([e300993](https://github.com/pengx17/logseq-plugin-link-preview/commit/e3009933a47567f642e6ed4e10d72b7a92629903))
+
 ## [1.0.1](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.0.0...v1.0.1) (2021-08-18)
 
 

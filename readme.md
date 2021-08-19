@@ -4,8 +4,19 @@ A simple plugin to show basic link information on hovering external links in Log
 
 ## Disclaimer 🚨
 
-- This plugin WILL send network requests to the author's server https://pengx17.vercel.app/. If you feel insecure about it, please do not use it.
+- This plugin WILL send network requests to the author's server https://logseq-plugin-link-preview.vercel.app/. If you feel insecure about it, please either do not use it, or deploy it yourself, which is explained in the next session.
 - The link preview does not always work. e.g., internal links inside of your private network.
+
+### Deploy your own backend
+
+Due to some technical limitations (CORS), the link preview metadata could not work without a proxy server.
+The easiest solution is to deploy your own backend to [Vercel](https://vercel.com/) using serverless functions:
+
+- fork this plugin repository
+- import your forked repository as a new project in Vercel
+- configure it with `FRAMEWORK PRESET` to Other
+- override `INSTALL COMMAND` in Build settings to `npm i pnpm -g && pnpm i`
+- click deploy. After deploy is done, you can now replace the `https://logseq-plugin-link-preview.vercel.app/` with your own backend URL.
 
 ## Demo
 

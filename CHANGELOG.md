@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.1.0...v1.2.0) (2021-08-19)
+
+
+### Features
+
+* allow the user to hover onto the tooltip ([f4d8adc](https://github.com/pengx17/logseq-plugin-link-preview/commit/f4d8adc3453b4c4556b6693561f03b92e2215998))
+
 # [1.1.0](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.0.1...v1.1.0) (2021-08-19)
 
 

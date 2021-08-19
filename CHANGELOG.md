@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.3.0...v1.4.0) (2021-08-19)
+
+
+### Features
+
+* change server domain ([01d2665](https://github.com/pengx17/logseq-plugin-link-preview/commit/01d26653e65bcffdb99dd18b654b15030ec8e466))
+
 # [1.3.0](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.2.0...v1.3.0) (2021-08-19)
 
 

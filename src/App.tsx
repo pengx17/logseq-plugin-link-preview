@@ -7,7 +7,8 @@ import {
 } from "./utils";
 import "./style.css";
 
-const domain = "https://pengx17.vercel.app";
+// Change this if you want to self-deploy
+const domain = "https://logseq-plugin-link-preview.vercel.app/";
 
 const fetcher = (url: string) =>
   fetch(`${domain}/api/link-preview?url=${encodeURIComponent(url)}`).then(

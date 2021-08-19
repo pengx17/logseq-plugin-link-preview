@@ -46,33 +46,52 @@ const PreviewCard = ({ data }: { data: typeof example }) => {
           <div className="text-container-title">{data.title}</div>
           <div className="text-container-description">{data.description}</div>
           <div className="text-container-url-container">
-            <img src={data.favicons[0]} width={16} height={16} alt="favico" />
+            {data.favicons?.length > 0 && (
+              <img src={data.favicons[0]} width={16} height={16} alt="favico" />
+            )}
             <span className="text-container-url">{data.url}</span>
           </div>
         </div>
-        <div className="cover-container">
-          {data.images[0] && (
+        {data.images?.[0] && (
+          <div className="cover-container">
             <img className="cover-image" src={data.images[0]} alt="cover" />
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </a>
   );
+};
+
+const useLinkPreview = (anchor: HTMLAnchorElement | null): typeof example => {
+  const { data } = useSWR(anchor?.href ?? null, fetcher);
+
+  return React.useMemo(() => {
+    if (data && data.contentType === "text/html") {
+      return data;
+    } else if (anchor) {
+      return {
+        url: anchor.href,
+        title: anchor.textContent,
+        description: data ? data.description : "loading ...",
+        ...(data ?? {}),
+      };
+    }
+    return null;
+  }, [anchor, data]);
 };
 
 function App() {
   const visible = useAppVisible();
   const anchor = useHoveringExternalLink();
   const debouncedAnchor = useDebounceValue(anchor, 200);
-  const { data, error } = useSWR(debouncedAnchor?.href ?? null, fetcher);
-  const loading = debouncedAnchor && (!data || !error);
+  const data = useLinkPreview(debouncedAnchor);
 
   React.useEffect(() => {
-    if (data && debouncedAnchor && data.contentType === "text/html") {
+    if (data && debouncedAnchor) {
       logseq.showMainUI();
       const elemBoundingRect = debouncedAnchor.getBoundingClientRect();
-      const width = data.images.length > 0 ? 720 : 400;
-      let left = elemBoundingRect.x - elemBoundingRect.width / 2;
+      const width = data.images?.length > 0 ? 720 : 400;
+      let left = (elemBoundingRect.left + elemBoundingRect.right - width) / 2;
       const right = left + width;
       const oversize = Math.max(right - top.visualViewport.width, 0);
       left = Math.max(left - oversize, 0);
@@ -85,11 +104,7 @@ function App() {
     } else {
       logseq.hideMainUI();
     }
-
-    if (loading) {
-      // show loading status?
-    }
-  }, [data, loading]);
+  }, [data]);
 
   if (visible && data) {
     return <PreviewCard data={data} />;

@@ -13,6 +13,7 @@ A simple plugin to show basic link information on hovering external links in Log
 
 ## TODO
 
+- [ ] Add docs about how to self-hosting the backend
 - [ ] Adapt for dark theme
 - [ ] An toggle to let the user change the link to link card in the document.
 

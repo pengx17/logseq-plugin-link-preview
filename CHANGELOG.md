@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.2.0...v1.3.0) (2021-08-19)
+
+
+### Features
+
+* add more media types for previewing ([a49b4f4](https://github.com/pengx17/logseq-plugin-link-preview/commit/a49b4f4dbb80aae152c0010344677d60c3a23205))
+
 # [1.2.0](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.1.0...v1.2.0) (2021-08-19)
 
 

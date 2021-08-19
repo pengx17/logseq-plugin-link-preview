@@ -22,7 +22,7 @@ function main() {
   logseq.setMainUIInlineStyle({
     zIndex: 11,
     width: "600px",
-    height: "120px",
+    height: "160px",
     position: "fixed",
   });
 }

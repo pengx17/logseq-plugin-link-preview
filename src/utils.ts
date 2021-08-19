@@ -46,9 +46,10 @@ export function useDebounceValue<T>(v: T, timeout: number = 50) {
 
 export const useHoveringExternalLink = () => {
   const [anchor, setAnchor] = React.useState<HTMLAnchorElement | null>(null);
+  const currentAnchor = React.useRef(anchor);
 
   React.useEffect(() => {
-    const enterListener = (e: MouseEvent) => {
+    const enterAnchorListener = (e: MouseEvent) => {
       const target = e.composedPath()[0] as HTMLAnchorElement;
       if (
         target.tagName === "A" &&
@@ -56,6 +57,7 @@ export const useHoveringExternalLink = () => {
         target.className.includes("external-link")
       ) {
         setAnchor(target);
+        currentAnchor.current = target;
         target.addEventListener(
           "mouseleave",
           () => {
@@ -66,9 +68,22 @@ export const useHoveringExternalLink = () => {
       }
     };
 
-    top.document.addEventListener("mouseenter", enterListener, true);
+    const enterIframeListener = (e: MouseEvent) => {
+      setAnchor(currentAnchor.current);
+      document.addEventListener(
+        "mouseleave",
+        () => {
+          setAnchor(null);
+        },
+        { once: true }
+      );
+    };
+
+    top.document.addEventListener("mouseenter", enterAnchorListener, true);
+    document.addEventListener("mouseenter", enterIframeListener, true);
     return () => {
-      top.document.removeEventListener("mouseenter", enterListener, true);
+      top.document.removeEventListener("mouseenter", enterAnchorListener, true);
+      document.removeEventListener("mouseenter", enterIframeListener, true);
     };
   }, []);
   return anchor;

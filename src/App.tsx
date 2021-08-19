@@ -63,7 +63,7 @@ const PreviewCard = ({ data }: { data: typeof example }) => {
 };
 
 const useLinkPreview = (anchor: HTMLAnchorElement | null): typeof example => {
-  const { data } = useSWR(anchor?.href ?? null, fetcher);
+  const { data, error } = useSWR(anchor?.href ?? null, fetcher);
 
   return React.useMemo(() => {
     if (data && data.contentType === "text/html") {
@@ -72,7 +72,11 @@ const useLinkPreview = (anchor: HTMLAnchorElement | null): typeof example => {
       return {
         url: anchor.href,
         title: anchor.textContent,
-        description: data ? data.description : "loading ...",
+        description: data
+          ? data.description
+          : error !== undefined
+          ? "Cannot load metadata"
+          : "loading ...",
         ...(data ?? {}),
       };
     }
@@ -95,9 +99,13 @@ function App() {
       const right = left + width;
       const oversize = Math.max(right - top.visualViewport.width, 0);
       left = Math.max(left - oversize, 0);
+      let vOffset =
+        elemBoundingRect.top - 168 > 0
+          ? elemBoundingRect.top - 168
+          : elemBoundingRect.top + 30;
       logseq.setMainUIInlineStyle({
         zIndex: 11,
-        top: `${elemBoundingRect.top - 120}px`,
+        top: vOffset + `px`,
         left: left + `px`,
         width: width + `px`,
       });

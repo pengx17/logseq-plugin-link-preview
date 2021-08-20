@@ -2,7 +2,6 @@ import * as React from "react";
 import { createCache, SWRConfig } from "swr";
 import { logseq as PL } from "../package.json";
 import { LinkPreview } from "./LinkPreview";
-import "./style.css";
 
 function createProvider() {
   const cacheId = PL.id + "_cache";

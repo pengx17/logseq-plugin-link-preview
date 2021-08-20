@@ -20,7 +20,8 @@ function main() {
   );
 
   logseq.setMainUIInlineStyle({
-    zIndex: 11,
+    zIndex: 20,
+    filter: "drop-shadow(0 0 12px rgba(0, 0, 0, 0.2))",
     position: "fixed",
   });
 

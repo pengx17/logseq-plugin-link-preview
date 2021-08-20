@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.4.1...v1.5.0) (2021-08-20)
+
+
+### Features
+
+* add cache ([f161113](https://github.com/pengx17/logseq-plugin-link-preview/commit/f1611132f5376cb5a13b83f4e4bfee76e0f83944))
+
 ## [1.4.1](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.4.0...v1.4.1) (2021-08-20)
 
 

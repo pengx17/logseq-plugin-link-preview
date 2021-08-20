@@ -23,6 +23,9 @@ function main() {
     zIndex: 11,
     position: "fixed",
   });
+
+  // @ts-expect-error
+  top[magicKey] = true;
 }
 
 // @ts-expect-error

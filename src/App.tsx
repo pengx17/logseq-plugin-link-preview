@@ -1,11 +1,7 @@
-import React from "react";
+import * as React from "react";
 import useSWR from "swr";
-import {
-  useAppVisible,
-  useDebounceValue,
-  useHoveringExternalLink,
-} from "./utils";
 import "./style.css";
+import { useDebounceValue, useHoveringExternalLink } from "./utils";
 
 // Change this if you want to self-deploy
 const domain = "https://logseq-plugin-link-preview.vercel.app/";
@@ -28,6 +24,10 @@ interface BaseType {
   url: string;
   anchorText: string;
   error: any;
+}
+
+interface PlaceholderType extends BaseType {
+  contentType: "placeholder";
 }
 
 interface HTMLResponse extends BaseType {
@@ -60,7 +60,8 @@ type Metadata =
   | AudioResponse
   | ImageResponse
   | VideoResponse
-  | ApplicationResponse;
+  | ApplicationResponse
+  | PlaceholderType;
 
 const isHTML = (d: Metadata): d is HTMLResponse => {
   return (d as any).contentType.startsWith("text/html");
@@ -120,8 +121,36 @@ const adaptMeta = (d: Metadata) => {
   };
 };
 
-// Credits: adopted directly from innos.io
-const PreviewCard = ({ data }: { data: ReturnType<typeof adaptMeta> }) => {
+type LinkPreviewMetadata = Pick<
+  Metadata,
+  "anchorText" | "contentType" | "error" | "favicons" | "mediaType" | "url"
+> & {
+  title: string;
+  description: React.ReactNode;
+  images?: string[];
+};
+
+const useLinkPreview = (
+  anchor: HTMLAnchorElement | null
+): LinkPreviewMetadata | null => {
+  const { data, error } = useSWR(anchor?.href ?? null, fetcher);
+
+  return React.useMemo(() => {
+    return anchor
+      ? adaptMeta({
+          contentType: "placeholder",
+          url: anchor.href,
+          anchorText:
+            anchor.textContent === anchor.href ? "" : anchor.textContent,
+          error,
+          ...(data ?? {}),
+        })
+      : null;
+  }, [anchor, data]);
+};
+
+// Credits: adopted from innos.io
+export const PreviewCard = ({ data }: { data: LinkPreviewMetadata }) => {
   return (
     <a
       className="root"
@@ -131,7 +160,9 @@ const PreviewCard = ({ data }: { data: ReturnType<typeof adaptMeta> }) => {
     >
       <div className="card-container">
         <div className="text-container">
-          <div className="text-container-title">{data.title}</div>
+          {data.title && (
+            <div className="text-container-title">{data.title}</div>
+          )}
           <div className="text-container-description">{data.description}</div>
           <div className="text-container-url-container">
             {data.favicons?.length > 0 && (
@@ -150,53 +181,71 @@ const PreviewCard = ({ data }: { data: ReturnType<typeof adaptMeta> }) => {
   );
 };
 
-const useLinkPreview = (anchor: HTMLAnchorElement | null) => {
-  const { data, error } = useSWR(anchor?.href ?? null, fetcher);
+const getCardSize = (data: LinkPreviewMetadata) => {
+  // If link has cover image
+  const width = data.images && data.images.length > 0 ? 720 : 400;
 
-  return React.useMemo(() => {
-    return anchor
-      ? adaptMeta({
-          contentType: "",
-          url: anchor.href,
-          anchorText: anchor.textContent,
-          error,
-          ...(data ?? {}),
-        })
-      : null;
-  }, [anchor, data]);
+  // If link showing placeholder
+  let height = 140;
+
+  if (
+    data.contentType.startsWith("text/html") ||
+    data.contentType.startsWith("audio")
+  ) {
+    height = 140;
+  } else if (
+    data.contentType.startsWith("image") ||
+    data.contentType.startsWith("video")
+  ) {
+    height = 300;
+  } else {
+    height = 100;
+  }
+  if (!data.description) {
+    height -= 60;
+  }
+
+  return [width, height];
 };
 
-function App() {
-  const visible = useAppVisible();
-  const anchor = useHoveringExternalLink();
-  const debouncedAnchor = useDebounceValue(anchor, 200);
-  const data = useLinkPreview(debouncedAnchor);
-
+const useAdaptViewPort = (
+  data: LinkPreviewMetadata | null,
+  anchor: HTMLAnchorElement | null
+) => {
   React.useEffect(() => {
-    if (data && debouncedAnchor) {
+    if (data && anchor) {
       logseq.showMainUI();
-      const elemBoundingRect = debouncedAnchor.getBoundingClientRect();
-      const width = data.images?.length > 0 ? 720 : 400;
+      const elemBoundingRect = anchor.getBoundingClientRect();
+      const [width, height] = getCardSize(data);
       let left = (elemBoundingRect.left + elemBoundingRect.right - width) / 2;
       const right = left + width;
       const oversize = Math.max(right - top.visualViewport.width, 0);
       left = Math.max(left - oversize, 0);
       let vOffset =
-        elemBoundingRect.top - 148 > 0
-          ? elemBoundingRect.top - 148
-          : elemBoundingRect.top + 30;
+        elemBoundingRect.top - height > 0
+          ? elemBoundingRect.top - height - 8
+          : elemBoundingRect.top + elemBoundingRect.height + 8;
       logseq.setMainUIInlineStyle({
         zIndex: 11,
         top: vOffset + `px`,
         left: left + `px`,
         width: width + `px`,
+        height: height + `px`,
       });
     } else {
       logseq.hideMainUI();
     }
-  }, [data]);
+  }, [anchor, data]);
+};
 
-  if (visible && data) {
+function App() {
+  const anchor = useHoveringExternalLink();
+  const debouncedAnchor = useDebounceValue(anchor, 200);
+  const data = useLinkPreview(debouncedAnchor);
+
+  useAdaptViewPort(data, debouncedAnchor);
+
+  if (data) {
     return <PreviewCard data={data} />;
   }
   return null;

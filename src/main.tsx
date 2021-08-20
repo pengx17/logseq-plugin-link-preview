@@ -21,8 +21,6 @@ function main() {
 
   logseq.setMainUIInlineStyle({
     zIndex: 11,
-    width: "600px",
-    height: "140px",
     position: "fixed",
   });
 }

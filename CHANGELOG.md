@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.5.0...v1.5.1) (2021-08-20)
+
+
+### Bug Fixes
+
+* style update ([1a5731f](https://github.com/pengx17/logseq-plugin-link-preview/commit/1a5731fbdc71e3b4dd6f770a88a3b5b85a7d556c))
+
 # [1.5.0](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.4.1...v1.5.0) (2021-08-20)
 
 

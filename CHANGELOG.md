@@ -1,3 +1,16 @@
+# [1.6.0](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.5.1...v1.6.0) (2021-08-23)
+
+
+### Bug Fixes
+
+* adapt theme colors ([322bd27](https://github.com/pengx17/logseq-plugin-link-preview/commit/322bd2756ad486c1207687a0f5e2ff396a7eb239))
+
+
+### Features
+
+* add convert to link card command ([64b8e3d](https://github.com/pengx17/logseq-plugin-link-preview/commit/64b8e3dee1f59e33dd204a6705b1a1fcaa29f6d0))
+* add inline preview mode ([0cfa3a8](https://github.com/pengx17/logseq-plugin-link-preview/commit/0cfa3a8bbb0aaa4104314634ae0ee795d2b82567))
+
 ## [1.5.1](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.5.0...v1.5.1) (2021-08-20)
 
 

@@ -1,11 +1,21 @@
 # Logseq Plugin Link Preview
 
-A simple plugin to show basic link information on hovering external links in Logseq.
+A simple plugin to show basic link information (based on [OpenGraph Protocol](https://ogp.me/)) for external links in Logseq.
+
+By default when it is enabled, when you hovering any external link in Logseq, it will show the link preview.
+Also this plugin will register a `Convert to Link Card` command for you to convert the link to a link card.
 
 ## Disclaimer 🚨
 
 - This plugin WILL send network requests to the author's server https://logseq-plugin-link-preview.vercel.app/. If you feel insecure about it, please either do not use it, or deploy it yourself, which is explained in the next session.
 - The link preview does not always work. e.g., internal links inside of your private network.
+
+## Features
+
+- Show link preview when hovering any external link in Logseq
+- Convert the link to a link card when you use the `Convert to Link Card` command
+- Cache the results locally
+- Light & dark theme
 
 ### Deploy your own backend
 
@@ -21,12 +31,6 @@ The easiest solution is to deploy your own backend to [Vercel](https://vercel.co
 ## Demo
 
 ![](./demo.gif)
-
-## TODO
-
-- [ ] Add docs about how to self-hosting the backend
-- [ ] Adapt for dark theme
-- [ ] An toggle to let the user change the link to link card in the document.
 
 ## How does this plugin work?
 

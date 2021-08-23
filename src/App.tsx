@@ -19,7 +19,37 @@ function createProvider() {
 const provider = createProvider();
 const { cache } = createCache(provider);
 
+// FIXME: adapt for dynamic theme mode change
+const useAdaptBackgroundColor = () => {
+  React.useEffect(() => {
+    if (frameElement) {
+      const baseStyle = getComputedStyle(frameElement);
+      const bgColor = baseStyle.getPropertyValue(
+        "--ls-secondary-background-color"
+      );
+      const primaryTextColor = baseStyle.getPropertyValue(
+        "--ls-primary-text-color"
+      );
+      const secondaryTextColor = baseStyle.getPropertyValue(
+        "--ls-secondary-text-color"
+      );
+      const borderColor = baseStyle.getPropertyValue("--ls-border-color");
+      document.documentElement.style.setProperty("--background-color", bgColor);
+      document.documentElement.style.setProperty("--border-color", borderColor);
+      document.documentElement.style.setProperty(
+        "--primary-text-color",
+        primaryTextColor
+      );
+      document.documentElement.style.setProperty(
+        "--secondary-text-color",
+        secondaryTextColor
+      );
+    }
+  }, []);
+};
+
 function App({ inline }: { inline: boolean }) {
+  useAdaptBackgroundColor();
   return (
     <SWRConfig value={{ cache }}>
       {inline ? <InlineLinkPreview /> : <HoverLinkPreview />}

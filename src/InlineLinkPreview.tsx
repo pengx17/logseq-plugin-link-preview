@@ -9,12 +9,11 @@ export const InlineLinkPreview = () => {
 
   React.useEffect(() => {
     if (data && window.frameElement) {
+      const iframe = window.frameElement as HTMLIFrameElement;
       const [width, height] = getCardSize(data);
-      (
-        window.frameElement as HTMLIFrameElement
-      ).style.maxWidth = `calc(100% - 38px)`;
-      (window.frameElement as HTMLIFrameElement).style.width = `${width}px`;
-      (window.frameElement as HTMLIFrameElement).style.height = `${height}px`;
+      iframe.style.maxWidth = `calc(100% - 38px)`;
+      iframe.style.width = `${width}px`;
+      iframe.style.height = `${height}px`;
     }
   }, [data]);
 

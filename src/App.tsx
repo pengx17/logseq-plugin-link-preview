@@ -1,7 +1,8 @@
 import * as React from "react";
 import { createCache, SWRConfig } from "swr";
 import { logseq as PL } from "../package.json";
-import { LinkPreview } from "./LinkPreview";
+import { HoverLinkPreview } from "./HoverLinkPreview";
+import { InlineLinkPreview } from "./InlineLinkPreview";
 
 function createProvider() {
   const cacheId = PL.id + "_cache";
@@ -18,10 +19,10 @@ function createProvider() {
 const provider = createProvider();
 const { cache } = createCache(provider);
 
-function App() {
+function App({ inline }: { inline: boolean }) {
   return (
     <SWRConfig value={{ cache }}>
-      <LinkPreview />
+      {inline ? <InlineLinkPreview /> : <HoverLinkPreview />}
     </SWRConfig>
   );
 }

@@ -2,6 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@logseq/libs': ^0.0.1-alpha.19
+  '@rollup/plugin-replace': ^3.0.0
   '@semantic-release/changelog': ^5.0.1
   '@semantic-release/git': ^9.0.0
   '@semantic-release/npm': ^7.1.3
@@ -11,6 +12,7 @@ specifiers:
   '@vitejs/plugin-react-refresh': 1.3.6
   conventional-changelog-conventionalcommits: ^4.6.0
   link-preview-js: ^2.1.8
+  lit: ^2.0.0-rc.3
   react: ^17.0.0
   react-dom: ^17.0.0
   react-use: ^17.2.4
@@ -23,12 +25,14 @@ specifiers:
 dependencies:
   '@logseq/libs': 0.0.1-alpha.26
   link-preview-js: 2.1.8
+  lit: 2.0.0-rc.3
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-use: 17.2.4_react-dom@17.0.2+react@17.0.2
   swr: 1.0.0-beta.11_react@17.0.2
 
 devDependencies:
+  '@rollup/plugin-replace': 3.0.0
   '@semantic-release/changelog': 5.0.1
   '@semantic-release/git': 9.0.0
   '@semantic-release/npm': 7.1.3
@@ -295,6 +299,10 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
+  /@lit/reactive-element/1.0.0-rc.3:
+    resolution: {integrity: sha512-Rs2px1keOQUNJUo5B+WExl5v244ZNCiN/iMVNO9evFdJjAdWCIupR/p14zRPkNHsciRBELLTcOZ379cI9O6PDg==}
+    dev: false
+
   /@logseq/libs/0.0.1-alpha.26:
     resolution: {integrity: sha512-KmgK+SzMuNPnIoI3Prg5P8upYezIqGI6FqB55atCyNHXK3tbkVOw6Qev5hyj9gM2r2RaKLEXQhz0TBHBrrlBSg==}
     dependencies:
@@ -328,6 +336,26 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.11.1
+    dev: true
+
+  /@rollup/plugin-replace/3.0.0:
+    resolution: {integrity: sha512-3c7JCbMuYXM4PbPWT4+m/4Y6U60SgsnDT/cCyAyUKwFHg7pTSfsSQzIpETha3a3ig6OdOKzZz87D9ZXIK3qsDg==}
+    peerDependencies:
+      rollup: ^1.20.0 || ^2.0.0
+    dependencies:
+      '@rollup/pluginutils': 3.1.0
+      magic-string: 0.25.7
+    dev: true
+
+  /@rollup/pluginutils/3.1.0:
+    resolution: {integrity: sha512-GksZ6pr6TpIjHm8h9lSQ8pi8BE9VeubNT0OMJ3B5uZJ8pz73NPiqOtCog/x2/QzM1ENChPKxMDhiQuRHsqc+lg==}
+    engines: {node: '>= 8.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0
+    dependencies:
+      '@types/estree': 0.0.39
+      estree-walker: 1.0.1
+      picomatch: 2.3.0
     dev: true
 
   /@rollup/pluginutils/4.1.1:
@@ -393,6 +421,10 @@ packages:
       tempy: 1.0.1
     dev: true
 
+  /@types/estree/0.0.39:
+    resolution: {integrity: sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==}
+    dev: true
+
   /@types/js-cookie/2.2.7:
     resolution: {integrity: sha512-aLkWa0C0vO5b4Sr798E26QgOkss68Un0bLjs7u9qxzPT5CG+8DuNTffWES58YzJs3hrVAOs1wonycqEBqNJubA==}
     dev: false
@@ -430,6 +462,10 @@ packages:
   /@types/throttle-debounce/2.1.0:
     resolution: {integrity: sha512-5eQEtSCoESnh2FsiLTxE121IiE60hnMqcb435fShf4bpLRjEu1Eoekht23y6zXS9Ts3l+Szu3TARnTsA0GkOkQ==}
     dev: true
+
+  /@types/trusted-types/1.0.6:
+    resolution: {integrity: sha512-230RC8sFeHoT6sSUlRO6a8cAnclO06eeiq1QDfiv2FGCLWFvvERWgwIQD4FWqD9A69BN7Lzee4OXwoMVnnsWDw==}
+    dev: false
 
   /@vercel/node/1.12.1:
     resolution: {integrity: sha512-NcawIY05BvVkWlsowaxF2hl/hJg475U8JvT2FnGykFPMx31q1/FtqyTw/awSrKfOSRXR0InrbEIDIelmS9NzPA==}
@@ -858,6 +894,10 @@ packages:
     engines: {node: '>=0.8.0'}
     dev: true
 
+  /estree-walker/1.0.1:
+    resolution: {integrity: sha512-1fMXF3YP4pZZVozF8j/ZLfvnR8NSIljt56UhbZ5PeeDmmGHpgpdwQt7ITlGvYaQukCvuBRMLEiKiYC+oeIg4cg==}
+    dev: true
+
   /estree-walker/2.0.2:
     resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
     dev: true
@@ -1211,6 +1251,27 @@ packages:
       cheerio: 1.0.0-rc.10
       cross-fetch: 3.1.4
       url: 0.11.0
+    dev: false
+
+  /lit-element/3.0.0-rc.3:
+    resolution: {integrity: sha512-NDe7yjW18gfYQb1GIEQr1T8sB1GUAb1HB62pdAEw+SK6lUW7OFPKQqCOlRhZ6qJXsw9KxMnyYIprLZT4FZdYdQ==}
+    dependencies:
+      '@lit/reactive-element': 1.0.0-rc.3
+      lit-html: 2.0.0-rc.4
+    dev: false
+
+  /lit-html/2.0.0-rc.4:
+    resolution: {integrity: sha512-WSLGu3vxq7y8q/oOd9I3zxyBELNLLiDk6gAYoKK4PGctI5fbh6lhnO/jVBdy0PV/vTc+cLJCA/occzx3YoNPeg==}
+    dependencies:
+      '@types/trusted-types': 1.0.6
+    dev: false
+
+  /lit/2.0.0-rc.3:
+    resolution: {integrity: sha512-UZDLWuspl7saA+WvS0e+TE3NdGGE05hOIwUPTWiibs34c5QupcEzpjB/aElt79V9bELQVNbUUwa0Ow7D1Wuszw==}
+    dependencies:
+      '@lit/reactive-element': 1.0.0-rc.3
+      lit-element: 3.0.0-rc.3
+      lit-html: 2.0.0-rc.4
     dev: false
 
   /lodash/4.17.21:

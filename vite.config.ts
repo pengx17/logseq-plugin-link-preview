@@ -2,6 +2,7 @@ import { defineConfig, Plugin, ResolvedConfig } from "vite";
 import reactRefresh from "@vitejs/plugin-react-refresh";
 import WindiCSS from "vite-plugin-windicss";
 import { writeFile, mkdir } from "fs/promises";
+import replace from "@rollup/plugin-replace";
 import path from "path";
 
 // Hard-coded for now
@@ -62,7 +63,24 @@ const windiCSS = WindiCSS();
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [reactRefreshPlugin, windiCSS, devIndexHtmlPlugin()],
+  plugins: [
+    reactRefreshPlugin,
+    windiCSS,
+    devIndexHtmlPlugin(),
+    {
+      ...replace({
+        // include: ["lit", "lit/**", "src/define-web-component.ts"],
+        values: {
+          HTMLElement: "top.HTMLElement",
+          "window.customElements": "top.window.customElements",
+          "window.customElements.define": "top.window.customElements.define",
+          customElements: "top.customElements",
+        },
+        delimiters: ["", ""],
+      }),
+      enforce: "pre",
+    },
+  ],
   base: "",
   clearScreen: false,
   // Makes HMR available for development
@@ -72,6 +90,7 @@ export default defineConfig({
     hmr: {
       host: "localhost",
     },
+    force: true,
     port: 4567,
     strictPort: true,
   },

@@ -6,6 +6,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 
 import { logseq as PL } from "../package.json";
+import { defineWebComponent } from "./define-web-component";
 
 const magicKey = `__${PL.id}__loaded__`;
 
@@ -27,6 +28,8 @@ function main() {
 
   // @ts-expect-error
   top[magicKey] = true;
+
+  defineWebComponent();
 }
 
 // @ts-expect-error

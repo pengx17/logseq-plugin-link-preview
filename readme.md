@@ -5,6 +5,8 @@ A simple plugin to show basic link information (based on [OpenGraph Protocol](ht
 By default when it is enabled, when you hovering any external link in Logseq, it will show the link preview.
 Also this plugin will register a `Convert to Link Card` command for you to convert the link to a link card.
 
+![](hover-demo.png)
+
 ## Disclaimer 🚨
 
 - This plugin WILL send network requests to the author's server https://logseq-plugin-link-preview.vercel.app/. If you feel insecure about it, please either do not use it, or deploy it yourself, which is explained in the next session.
@@ -34,6 +36,8 @@ The easiest solution is to deploy your own backend to [Vercel](https://vercel.co
 
 ## How does this plugin work?
 
+### Hovering Mode
+
 It will register `mouseenter` and `mouseleave` events on all external links in the main document of Logseq. Note, in this step this plugin uses a unsafe `top` context of the main document, which might not work in the future.
 
 In the listener, the plugin will extract the `href` attribute of the link and send a request to an API server to get the link information (the OpenGraph metadata).
@@ -41,4 +45,22 @@ In the listener, the plugin will extract the `href` attribute of the link and se
 Once the api returns with the link metadata (e.g., title, description, image), the plugin will
 
 - render them in the plugin iframe
-- move its position to the hovering link
+- resize the iframe and move its position to the hovering link
+
+### Inline Mode
+
+Typically, user will use slash command to create a embedded `iframe` to replace the URL in the block:
+
+```html
+<iframe
+  data-url="https://twitter.com/pengx17/status/1428025254144880645"
+  src="file:///Users/username/Documents/GitHub/logseq-plugin-link-preview/dist/index.html"></iframe>
+```
+
+The entry `src` is exactly the same resource that is being used for hovering mode.
+Similar to Hovering Mode, the `data-url` will be used for fetching the link metadata.
+
+Once the api returns with the link metadata (e.g., title, description, image), the plugin will
+
+- render them in the plugin iframe
+- resize the iframe (do not need to move its position this time)

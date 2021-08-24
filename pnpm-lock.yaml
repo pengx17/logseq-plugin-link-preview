@@ -18,7 +18,7 @@ specifiers:
   typescript: 4.3.5
   vercel: ^23.1.2
   vite: 2.5.0
-  vite-plugin-windicss: 1.2.7
+  vite-plugin-windicss: 1.2.8
   windicss: 3.1.7
 
 dependencies:
@@ -41,7 +41,7 @@ devDependencies:
   typescript: 4.3.5
   vercel: 23.1.2
   vite: 2.5.0
-  vite-plugin-windicss: 1.2.7_vite@2.5.0
+  vite-plugin-windicss: 1.2.8_vite@2.5.0
   windicss: 3.1.7
 
 packages:
@@ -490,8 +490,8 @@ packages:
       - supports-color
     dev: true
 
-  /@windicss/config/1.2.7:
-    resolution: {integrity: sha512-XpH/dkXWk2LGygHzHBWWEW/yGcLqhpFFN2jo+zMeWZ1ggBzndQQzBHqHGQHcr6U6v3PoBuOz1prVWgUmQxn9eQ==}
+  /@windicss/config/1.2.8:
+    resolution: {integrity: sha512-v9vyIiG8GYUTYo874ExlVu1i6vlsWo4RFZWiDGfPKdN7GBRCcJcEV+X+j3AZPPIsx5JvD5TXQlDvkbYIqYWYbQ==}
     dependencies:
       debug: 4.3.2
       jiti: 1.11.0
@@ -500,11 +500,11 @@ packages:
       - supports-color
     dev: true
 
-  /@windicss/plugin-utils/1.2.7:
-    resolution: {integrity: sha512-aNQhd1nEjkVsCHmzq0+4VGTmovOGGfPnH2hspH4YuDxMDhQ/99VrBdyk7irngWJjedjHB3+UYCSYWpY5a+2Hbg==}
+  /@windicss/plugin-utils/1.2.8:
+    resolution: {integrity: sha512-JwnFMJMCX/+Re4iItozvbWC3yz/7WJNOJJkgDKQ9X5Ran1sfNjx9m3LCijsYLf0MULCplZJIh/HzdxjxZMNFUA==}
     dependencies:
       '@antfu/utils': 0.2.4
-      '@windicss/config': 1.2.7
+      '@windicss/config': 1.2.8
       debug: 4.3.2
       fast-glob: 3.2.7
       magic-string: 0.25.7
@@ -2408,12 +2408,12 @@ packages:
       update-notifier: 4.1.0
     dev: true
 
-  /vite-plugin-windicss/1.2.7_vite@2.5.0:
-    resolution: {integrity: sha512-JgIGsH5HPaz3ghDRhhLeF8VZQMUE+R0jD9u8sbne5KdBBa208r0IuTcx73V7CPcmsu7KABG6rfLgST9ffVoiDA==}
+  /vite-plugin-windicss/1.2.8_vite@2.5.0:
+    resolution: {integrity: sha512-KLoFfsEh5RAyw2OjW+lrIdgkRAMa9KM1sKPYf8pYgVIj4PL6xBbJlbvWOZnZdW1rFjLtF3KzPT35HEmj6MV8XQ==}
     peerDependencies:
       vite: ^2.0.1
     dependencies:
-      '@windicss/plugin-utils': 1.2.7
+      '@windicss/plugin-utils': 1.2.8
       chalk: 4.1.2
       debug: 4.3.2
       vite: 2.5.0

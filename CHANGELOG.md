@@ -1,3 +1,10 @@
+## [1.6.2](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.6.1...v1.6.2) (2021-08-24)
+
+
+### Bug Fixes
+
+* not showing loading state ([55a572f](https://github.com/pengx17/logseq-plugin-link-preview/commit/55a572fcaaf5b38fc88eaa671cec126f630b9018))
+
 ## [1.6.1](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.6.0...v1.6.1) (2021-08-24)
 
 

@@ -16,7 +16,7 @@ specifiers:
   react-use: ^17.2.4
   swr: ^1.0.0-beta.12
   typescript: 4.3.5
-  vercel: ^23.1.2
+  vercel: 23.1.2
   vite: 2.5.0
   vite-plugin-windicss: 1.2.8
   windicss: 3.1.7

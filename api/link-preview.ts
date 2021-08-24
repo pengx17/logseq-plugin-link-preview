@@ -22,15 +22,18 @@ export default async function linkPreviewHandler(
 ) {
   const { url } = req.query;
   console.info("fetching " + url);
-  const data = await getLinkPreview(Array.isArray(url) ? url[0] : url, {
-    timeout: 10000,
-    headers: {
-      "user-agent": "googlebot",
-    },
-  });
-
-  headers.forEach(({ key, value }) => {
-    res.setHeader(key, value);
-  });
-  res.json(data);
+  try {
+    const data = await getLinkPreview(Array.isArray(url) ? url[0] : url, {
+      timeout: 10000,
+      headers: {
+        "user-agent": "googlebot",
+      },
+    });
+    headers.forEach(({ key, value }) => {
+      res.setHeader(key, value);
+    });
+    res.json(data);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
 }

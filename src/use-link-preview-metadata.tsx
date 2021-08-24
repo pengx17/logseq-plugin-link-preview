@@ -2,7 +2,7 @@ import * as React from "react";
 import useSWR from "swr";
 
 // Change this if you want to self-deploy
-const domain = "https://logseq-plugin-link-preview.vercel.app/";
+const domain = "https://logseq-plugin-link-preview.vercel.app";
 
 const fetcher = (url: string) =>
   fetch(`${domain}/api/link-preview?url=${encodeURIComponent(url)}`).then(

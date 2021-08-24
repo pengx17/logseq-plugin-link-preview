@@ -24,7 +24,7 @@ export default async function linkPreviewHandler(
   console.info("fetching " + url);
   try {
     const data = await getLinkPreview(Array.isArray(url) ? url[0] : url, {
-      timeout: 10000,
+      timeout: 3000,
       headers: {
         "user-agent": "googlebot",
       },

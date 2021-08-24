@@ -1,3 +1,10 @@
+## [1.6.4](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.6.3...v1.6.4) (2021-08-24)
+
+
+### Bug Fixes
+
+* faster timeout ([3e350b6](https://github.com/pengx17/logseq-plugin-link-preview/commit/3e350b64081ad3f9bd06a67ab07615e13118b736))
+
 ## [1.6.3](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.6.2...v1.6.3) (2021-08-24)
 
 

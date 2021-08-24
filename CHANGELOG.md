@@ -1,3 +1,10 @@
+## [1.6.3](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.6.2...v1.6.3) (2021-08-24)
+
+
+### Bug Fixes
+
+* api exceptions ([9f1f0d0](https://github.com/pengx17/logseq-plugin-link-preview/commit/9f1f0d0a97325c32964f314ded8afba35f8b6575))
+
 ## [1.6.2](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.6.1...v1.6.2) (2021-08-24)
 
 

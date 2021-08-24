@@ -3,7 +3,7 @@ import { useDebounce } from "react-use";
 import { LinkCard } from "./LinkCard";
 import {
   LinkPreviewMetadata,
-  useLinkPreviewMetadata
+  useLinkPreviewMetadata,
 } from "./use-link-preview-metadata";
 import { getCardSize } from "./utils";
 

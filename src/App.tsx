@@ -6,6 +6,7 @@ import { InlineLinkPreview } from "./InlineLinkPreview";
 
 function createProvider() {
   const cacheId = PL.id + "_cache";
+  // TODO: migrate to LSPluginFileStorage
   const map = new Map(JSON.parse(localStorage.getItem(cacheId) ?? "[]"));
 
   window.addEventListener("beforeunload", () => {

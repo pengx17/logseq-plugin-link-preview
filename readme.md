@@ -54,12 +54,13 @@ Typically, user will use slash command to create a embedded `iframe` to replace 
 ```html
 <iframe
   data-url="https://twitter.com/pengx17/status/1428025254144880645"
-  src="file:///Users/username/Documents/GitHub/logseq-plugin-link-preview/dist/index.html"></iframe>
+  src="file:///Users/username/Documents/GitHub/logseq-plugin-link-preview/dist/index.html"
+></iframe>
 ```
 
-The entry `src` is exactly the same resource that is being used for hovering mode.
-Similar to Hovering Mode, the `data-url` will be used for fetching the link metadata.
+The entry `src` is exactly the same resource that is being used for hovering mode, where the `data-url` will be used for fetching the link metadata.
 
+Similar to Hovering Mode, we need to fetch the link metadata first.
 Once the api returns with the link metadata (e.g., title, description, image), the plugin will
 
 - render them in the plugin iframe

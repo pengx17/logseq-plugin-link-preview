@@ -144,5 +144,5 @@ export const useLinkPreviewMetadata = (
           ...(data ?? {}),
         })
       : null;
-  }, [data, error]);
+  }, [url, data, error]);
 };

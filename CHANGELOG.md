@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.6.0...v1.6.1) (2021-08-24)
+
+
+### Bug Fixes
+
+* not showing error ([abc3049](https://github.com/pengx17/logseq-plugin-link-preview/commit/abc304976de0fe5778508259dbf33af854eb9551))
+
 # [1.6.0](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.5.1...v1.6.0) (2021-08-23)
 
 

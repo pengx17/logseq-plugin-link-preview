@@ -14,7 +14,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-use": "^17.2.4",
-    "swr": "^1.0.0-beta.12"
+    "swr": "^1.0.0"
   },
   "devDependencies": {
     "@semantic-release/changelog": "5.0.1",

@@ -1,24 +1,28 @@
 import * as React from "react";
-import { createCache, SWRConfig } from "swr";
-import { logseq as PL } from "../package.json";
+import { SWRConfig } from "swr";
+import { logseq as PL, version } from "../package.json";
 import { HoverLinkPreview } from "./HoverLinkPreview";
 import { InlineLinkPreview } from "./InlineLinkPreview";
+import { debounce } from "./utils";
 
-function createProvider() {
-  const cacheId = PL.id + "_cache";
-  // TODO: migrate to LSPluginFileStorage
-  const map = new Map(JSON.parse(localStorage.getItem(cacheId) ?? "[]"));
+function localStorageProvider() {
+  class CacheMap extends Map<string, any> {
+    persist = debounce(() => {
+      localStorage.setItem(cacheId, JSON.stringify(Array.from(this.entries())));
+    }, 1000);
+    set = (key: string, value: any) => {
+      this.persist();
+      return super.set(key, value);
+    };
+  }
 
-  window.addEventListener("beforeunload", () => {
-    const appCache = JSON.stringify(Array.from(map.entries()));
-    localStorage.setItem(cacheId, appCache);
-  });
+  const cacheId = `${PL.id}-${version}`;
+  // When initializing, we restore the data from `localStorage` into a map.
+  const map = new CacheMap(JSON.parse(localStorage.getItem(cacheId) ?? "[]"));
 
+  // We still use the map for write & read for performance.
   return map;
 }
-
-const provider = createProvider();
-const { cache } = createCache(provider);
 
 // FIXME: adapt for dynamic theme mode change
 const useAdaptBackgroundColor = () => {
@@ -52,7 +56,7 @@ const useAdaptBackgroundColor = () => {
 function App({ inline }: { inline: boolean }) {
   useAdaptBackgroundColor();
   return (
-    <SWRConfig value={{ cache }}>
+    <SWRConfig value={{ provider: localStorageProvider }}>
       {inline ? <InlineLinkPreview /> : <HoverLinkPreview />}
     </SWRConfig>
   );

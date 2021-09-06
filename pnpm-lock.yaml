@@ -14,7 +14,7 @@ specifiers:
   react: ^17.0.2
   react-dom: ^17.0.2
   react-use: ^17.2.4
-  swr: ^1.0.0-beta.12
+  swr: ^1.0.0
   typescript: 4.4.2
   vercel: 23.1.2
   vite: 2.5.3
@@ -27,7 +27,7 @@ dependencies:
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-use: 17.2.4_react-dom@17.0.2+react@17.0.2
-  swr: 1.0.0-beta.12_react@17.0.2
+  swr: 1.0.0_react@17.0.2
 
 devDependencies:
   '@semantic-release/changelog': 5.0.1
@@ -2356,8 +2356,8 @@ packages:
       has-flag: 4.0.0
     dev: true
 
-  /swr/1.0.0-beta.12_react@17.0.2:
-    resolution: {integrity: sha512-Vq23PIKKt3fRNJQcrmcyyQOYB7jbB9SVYC4m2/KbaXoJSRG8lQwC9ndcMCAx8023DMwCTGRg7NpCyjzi+yyN6Q==}
+  /swr/1.0.0_react@17.0.2:
+    resolution: {integrity: sha512-v55Dr+vxIFiUyGxC5W4uN5falxHxYdbpb/R3bO+bSG+svbC9bUWmupy4NM/2pER7X8OvgwJWu0AiSoGy0ND9ew==}
     peerDependencies:
       react: ^16.11.0 || ^17.0.0
     dependencies:

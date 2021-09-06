@@ -31,3 +31,13 @@ export const getCardSize = (data: LinkPreviewMetadata) => {
 
   return [width, height];
 };
+
+export function debounce<T = void>(fn: (t: T) => void, delay: number) {
+  let timeout: number | undefined;
+  return (t: T) => {
+    clearTimeout(timeout);
+    timeout = window.setTimeout(() => {
+      fn(t);
+    }, delay);
+  };
+}

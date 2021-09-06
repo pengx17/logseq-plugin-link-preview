@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.7.0...v1.7.1) (2021-09-06)
+
+
+### Bug Fixes
+
+* build version ([75c4c81](https://github.com/pengx17/logseq-plugin-link-preview/commit/75c4c8104fa4c33d410020f6de78c39a62d5cfd3))
+
 # [1.7.0](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.6.4...v1.7.0) (2021-09-06)
 
 

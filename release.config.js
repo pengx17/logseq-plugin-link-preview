@@ -17,9 +17,16 @@ module.exports = {
     ],
     "@semantic-release/git",
     [
+      "@semantic-release/exec",
+      {
+        prepareCmd:
+          "zip -qq -r logseq-plugin-link-preview-${nextRelease.version}.zip dist readme.md LICENSE package.json",
+      },
+    ],
+    [
       "@semantic-release/github",
       {
-        assets: "logseq-plugin-link-preview.zip",
+        assets: "logseq-plugin-link-preview-*.zip",
       },
     ],
   ],

@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.6.4...v1.7.0) (2021-09-06)
+
+
+### Features
+
+* update caching with swr 1.0 ([fdd73f4](https://github.com/pengx17/logseq-plugin-link-preview/commit/fdd73f48490ec53296fcb81d7a1e8396a2502e25))
+
 ## [1.6.4](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.6.3...v1.6.4) (2021-08-24)
 
 

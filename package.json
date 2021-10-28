@@ -28,7 +28,7 @@
     "conventional-changelog-conventionalcommits": "4.6.1",
     "typescript": "4.4.3",
     "vercel": "23.1.2",
-    "vite": "2.6.5",
+    "vite": "2.6.13",
     "vite-plugin-windicss": "1.4.10",
     "windicss": "3.2.0"
   },

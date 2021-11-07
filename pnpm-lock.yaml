@@ -20,7 +20,7 @@ specifiers:
   vercel: 23.1.2
   vite: 2.6.13
   vite-plugin-windicss: 1.5.1
-  windicss: 3.2.0
+  windicss: 3.2.1
 
 dependencies:
   '@logseq/libs': 0.0.1-alpha.26
@@ -44,7 +44,7 @@ devDependencies:
   vercel: 23.1.2
   vite: 2.6.13
   vite-plugin-windicss: 1.5.1_vite@2.6.13
-  windicss: 3.2.0
+  windicss: 3.2.1
 
 packages:
 
@@ -2607,12 +2607,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       string-width: 4.2.2
-    dev: true
-
-  /windicss/3.2.0:
-    resolution: {integrity: sha512-z0q789VZXKdRBrAsfkR+1vOYCb7bS1kec1hyaulT4NClNgO9zGObWbiN+9Jwk0Iw7CLdk/QCB/WCF+zVmr0WpQ==}
-    engines: {node: '>= 12'}
-    hasBin: true
     dev: true
 
   /windicss/3.2.1:

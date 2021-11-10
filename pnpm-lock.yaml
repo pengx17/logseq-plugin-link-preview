@@ -18,7 +18,7 @@ specifiers:
   swr: ^1.0.0
   typescript: 4.4.4
   vercel: 23.1.2
-  vite: 2.6.13
+  vite: 2.6.14
   vite-plugin-windicss: 1.5.1
   windicss: 3.2.1
 
@@ -42,8 +42,8 @@ devDependencies:
   conventional-changelog-conventionalcommits: 4.6.1
   typescript: 4.4.4
   vercel: 23.1.2
-  vite: 2.6.13
-  vite-plugin-windicss: 1.5.1_vite@2.6.13
+  vite: 2.6.14
+  vite-plugin-windicss: 1.5.1_vite@2.6.14
   windicss: 3.2.1
 
 packages:
@@ -2549,7 +2549,7 @@ packages:
       update-notifier: 4.1.0
     dev: true
 
-  /vite-plugin-windicss/1.5.1_vite@2.6.13:
+  /vite-plugin-windicss/1.5.1_vite@2.6.14:
     resolution: {integrity: sha512-AUuRFT5Y7SfW9eclaKf5BOTZ7MMfkUZzOeVzqd9yq/uIwzWyleRtssCTuJgZ0+om+hnXn9YwcIpR26lsaasIbg==}
     peerDependencies:
       vite: ^2.0.1
@@ -2557,14 +2557,14 @@ packages:
       '@windicss/plugin-utils': 1.5.1
       chalk: 4.1.2
       debug: 4.3.2
-      vite: 2.6.13
+      vite: 2.6.14
       windicss: 3.2.1
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /vite/2.6.13:
-    resolution: {integrity: sha512-+tGZ1OxozRirTudl4M3N3UTNJOlxdVo/qBl2IlDEy/ZpTFcskp+k5ncNjayR3bRYTCbqSOFz2JWGN1UmuDMScA==}
+  /vite/2.6.14:
+    resolution: {integrity: sha512-2HA9xGyi+EhY2MXo0+A2dRsqsAG3eFNEVIo12olkWhOmc8LfiM+eMdrXf+Ruje9gdXgvSqjLI9freec1RUM5EA==}
     engines: {node: '>=12.2.0'}
     hasBin: true
     peerDependencies:

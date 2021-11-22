@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.7.2...v1.8.0) (2021-11-22)
+
+
+### Features
+
+* use onMacroRendererSlotted API ([f281566](https://github.com/pengx17/logseq-plugin-link-preview/commit/f281566b71c32aed4c1825e55a8e8fd61ad6035f))
+
 ## [1.7.2](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.7.1...v1.7.2) (2021-11-22)
 
 

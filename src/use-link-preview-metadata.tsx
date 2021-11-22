@@ -4,7 +4,7 @@ import useSWR from "swr";
 // Change this if you want to self-deploy
 const domain = "https://logseq-plugin-link-preview.vercel.app";
 
-const fetcher = (url: string) =>
+export const fetcher = (url: string) =>
   fetch(`${domain}/api/link-preview?url=${encodeURIComponent(url)}`).then(
     (res) => {
       if (res.status >= 400) {
@@ -128,21 +128,41 @@ export type LinkPreviewMetadata = Pick<
   images?: string[];
 };
 
+export function toLinkPreviewMetadata(
+  url?: string | null,
+  altText?: string | null,
+  data?: any,
+  error?: any
+) {
+  return adaptMeta({
+    contentType: "placeholder",
+    url: url,
+    anchorText: altText !== url ? altText : "",
+    error,
+    ...(data ?? {}),
+  });
+}
+
+export async function fetchLinkPreviewMetadata(
+  url: string,
+  altText?: string | null
+) {
+  let data: any;
+  let error: any;
+  try {
+    data = await fetcher(url);
+  } catch (err) {
+    error = err;
+  }
+  return toLinkPreviewMetadata(url, altText, data, error);
+}
+
 export const useLinkPreviewMetadata = (
   url?: string | null,
   altText?: string | null
 ): LinkPreviewMetadata | null => {
   const { data, error } = useSWR(url ?? null, fetcher);
-
   return React.useMemo(() => {
-    return url
-      ? adaptMeta({
-          contentType: "placeholder",
-          url: url,
-          anchorText: altText !== url ? altText : "",
-          error,
-          ...(data ?? {}),
-        })
-      : null;
-  }, [url, data, error]);
+    return url ? toLinkPreviewMetadata(url, altText, data, error) : null;
+  }, [url, altText, data, error]);
 };

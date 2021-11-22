@@ -3,6 +3,9 @@ import { LinkCard } from "./LinkCard";
 import { useLinkPreviewMetadata } from "./use-link-preview-metadata";
 import { getCardSize } from "./utils";
 
+/**
+ * @deprecated
+ */
 export const InlineLinkPreview = () => {
   const url = window.frameElement?.getAttribute("data-url");
   const data = useLinkPreviewMetadata(url);

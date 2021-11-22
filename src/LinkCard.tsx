@@ -1,23 +1,30 @@
 import * as React from "react";
 import "./style.css";
 import { LinkPreviewMetadata } from "./use-link-preview-metadata";
+import { getCardSize } from "./utils";
 
 // Credits: adopted from innos.io
 export const LinkCard = ({ data }: { data: LinkPreviewMetadata }) => {
+  const [width, height] = getCardSize(data);
   return (
     <a
-      className="root"
+      style={{ width, height }}
+      className="link_preview__root"
       href={data.url}
       rel="noopener noreferrer"
       target="_blank"
     >
-      <div className="card-container">
-        <div className="text-container">
+      <div className="link_preview__card-container">
+        <div className="link_preview__text-container">
           {data.title && (
-            <div className="text-container-title">{data.title}</div>
+            <div className="link_preview__text-container-title">
+              {data.title}
+            </div>
           )}
-          <div className="text-container-description">{data.description}</div>
-          <div className="text-container-url-container">
+          <div className="link_preview__text-container-description">
+            {data.description}
+          </div>
+          <div className="link_preview__text-container-url-container">
             {data.favicons?.length > 0 && (
               <img src={data.favicons[0]} width={16} height={16} />
             )}
@@ -25,8 +32,12 @@ export const LinkCard = ({ data }: { data: LinkPreviewMetadata }) => {
           </div>
         </div>
         {data.images?.[0] && (
-          <div className="cover-container">
-            <img className="cover-image" src={data.images[0]} alt="cover" />
+          <div className="link_preview__cover-container">
+            <img
+              className="link_preview__cover-image"
+              src={data.images[0]}
+              alt="cover"
+            />
           </div>
         )}
       </div>

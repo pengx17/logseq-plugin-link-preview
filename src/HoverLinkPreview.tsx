@@ -7,6 +7,8 @@ import {
 } from "./use-link-preview-metadata";
 import { getCardSize, usePreventFocus } from "./utils";
 
+import './hovering.css';
+
 function useDebounceValue<T>(v: T, timeout: number = 50) {
   const [state, setState] = React.useState(v);
   useDebounce(

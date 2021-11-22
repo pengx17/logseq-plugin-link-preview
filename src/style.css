@@ -1,62 +1,70 @@
-.root {
-  width: 100vw;
-  height: 100vh;
+.link_preview__root {
   display: block;
   cursor: pointer;
   user-select: none;
   border-radius: 6px;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--ls-border-color);
   overflow: hidden;
   text-decoration: none;
 }
-.root:hover {
+
+.link_preview__root, .link_preview__root * {
+  box-sizing: border-box;
+}
+
+.link_preview__root:hover {
   border: 1px solid rgba(97, 106, 229, 0.5);
 }
-.card-container {
+
+.link_preview__card-container {
   width: 100%;
   height: 100%;
-  background-color: var(--background-color);
+  background-color: var(--ls-secondary-background-color);
   display: flex;
   justify-content: space-between;
   align-items: stretch;
 }
-.text-container {
+
+.link_preview__text-container {
   padding: 12px 16px;
   flex: 2;
   overflow: hidden;
   display: flex;
   flex-flow: column;
 }
-.cover-container {
+
+.link_preview__cover-container {
   flex: 1;
 }
-.text-container-title {
+
+.link_preview__text-container-title {
   font-size: 16px;
   font-weight: 500;
   line-height: 26px;
-  color: var(--primary-text-color);
+  color: var(--ls-primary-text-color);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   flex-shrink: 0;
 }
-.text-container-description {
+
+.link_preview__text-container-description {
   line-height: 20px;
   font-size: 12px;
   font-weight: 400;
-  color: var(--secondary-text-color);
+  color: var(--ls-secondary-text-color);
   margin-top: 6px;
   overflow: auto;
   display: flex;
   flex-grow: 1;
 }
 
-.text-container-description > * {
+.link_preview__text-container-description > * {
   align-self: center;
   flex: 1;
 }
 
-.text-container-url-container {
+.link_preview__text-container-url-container {
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
@@ -65,13 +73,15 @@
   height: 17px;
   line-height: 17px;
   font-size: 12px;
-  color: var(--primary-text-color);
+  color: var(--ls-primary-text-color);
   margin-top: 6px;
 }
-.text-container-url-container > img {
+
+.link_preview__text-container-url-container > img {
   margin-right: 8px;
 }
-.text-container-url {
+
+.link_preview__text-container-url {
   flex-grow: 0;
   flex-shrink: 1;
   min-width: 0;
@@ -79,7 +89,8 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.cover-image {
+
+.link_preview__cover-image {
   object-position: 50% 50%;
   background-size: auto 100%;
   background-position-y: 50%;
@@ -88,4 +99,9 @@
   overflow: hidden;
   width: 100%;
   height: 100%;
+}
+
+.link_preview__root img {
+  box-shadow: unset;
+  margin-left: unset;
 }

@@ -1,3 +1,10 @@
+## [1.8.2](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.8.1...v1.8.2) (2021-11-22)
+
+
+### Bug Fixes
+
+* attempt to fix link click for macro mode ([4176d66](https://github.com/pengx17/logseq-plugin-link-preview/commit/4176d6625baa7c3aa77b1e6524b6462d7f8dd82e))
+
 ## [1.8.1](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.8.0...v1.8.1) (2021-11-22)
 
 

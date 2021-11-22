@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.8.0...v1.8.1) (2021-11-22)
+
+
+### Bug Fixes
+
+* prepare for publish to marketplace ([a553012](https://github.com/pengx17/logseq-plugin-link-preview/commit/a5530127847098c15376395ed449d762ba132e21))
+
 # [1.8.0](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.7.2...v1.8.0) (2021-11-22)
 
 

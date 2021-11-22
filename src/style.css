@@ -8,7 +8,8 @@
   text-decoration: none;
 }
 
-.link_preview__root, .link_preview__root * {
+.link_preview__root,
+.link_preview__root * {
   box-sizing: border-box;
 }
 

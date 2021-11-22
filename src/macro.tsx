@@ -15,8 +15,14 @@ const urlRegex =
 const macroPrefix = ":linkpreview";
 
 export const registerMacro = () => {
+  // FIXME: seems not working because Logseq will capture mousedown events on blocks
+  logseq.provideModel({
+    openExternalLink(e: any) {
+      const { url } = e.dataset;
+      logseq.App.openExternalLink(url);
+    },
+  });
   logseq.provideStyle(rawStyle);
-
   logseq.App.onMacroRendererSlotted(async ({ payload, slot }) => {
     const [type, url] = payload.arguments;
     if (!type?.startsWith(macroPrefix)) {
@@ -26,12 +32,14 @@ export const registerMacro = () => {
     const cache = localStorageProvider();
     let cached = cache.get(`inlinereq$` + url);
     const render = () => {
+      const inner = ReactDOMServer.renderToStaticMarkup(
+        <LinkCard data={toLinkPreviewMetadata(url, null, cached)} />
+      );
       logseq.provideUI({
+        key: "linkpreview",
         slot,
         reset: true,
-        template: ReactDOMServer.renderToString(
-          <LinkCard data={toLinkPreviewMetadata(url, null, cached)} />
-        ),
+        template: `<span data-on-click="openExternalLink" data-url="${url}">${inner}</span>`,
       });
     };
     render();

@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.7.1...v1.7.2) (2021-11-22)
+
+
+### Bug Fixes
+
+* when hovering a link,  should not lose edit focus ([81c9987](https://github.com/pengx17/logseq-plugin-link-preview/commit/81c99871a4640dbd30dd1802a6677113d1375fc6))
+
 ## [1.7.1](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.7.0...v1.7.1) (2021-09-06)
 
 

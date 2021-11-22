@@ -10,12 +10,14 @@ function main(inline: boolean) {
     registerMacroRender();
   }
 
-  ReactDOM.render(
-    <React.StrictMode>
-      <App inline={inline} />
-    </React.StrictMode>,
-    document.getElementById("app")
-  );
+  if (top) {
+    ReactDOM.render(
+      <React.StrictMode>
+        <App inline={inline} />
+      </React.StrictMode>,
+      document.getElementById("app")
+    );
+  }
 }
 
 if (isInlineMode()) {

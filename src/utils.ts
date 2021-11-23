@@ -55,12 +55,11 @@ export const usePreventFocus = () => {
         }
       });
     };
-    // @ts-expect-error
     timer = setInterval(listener, 1000);
-    window.addEventListener('focus', listener);
+    window.addEventListener("focus", listener);
     return () => {
-      window.removeEventListener('focus', listener);
+      window.removeEventListener("focus", listener);
       clearInterval(timer);
     };
-  })
-}
+  }, []);
+};

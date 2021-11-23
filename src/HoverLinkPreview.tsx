@@ -7,7 +7,7 @@ import {
 } from "./use-link-preview-metadata";
 import { getCardSize, usePreventFocus } from "./utils";
 
-import './hovering.css';
+import "./hovering.css";
 
 function useDebounceValue<T>(v: T, timeout: number = 50) {
   const [state, setState] = React.useState(v);
@@ -113,7 +113,15 @@ export const HoverLinkPreview = () => {
   useAdaptViewPort(data, debouncedAnchor);
 
   if (data) {
-    return <LinkCard data={data} />;
+    return (
+      <LinkCard
+        data={data}
+        // @ts-expect-error
+        href={data.url}
+        rel="noopener noreferrer"
+        target="_blank"
+      />
+    );
   }
   return null;
 };

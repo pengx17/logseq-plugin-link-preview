@@ -1,3 +1,10 @@
+## [1.8.4](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.8.3...v1.8.4) (2021-11-25)
+
+
+### Bug Fixes
+
+* usePreventFocus dep ([75508ae](https://github.com/pengx17/logseq-plugin-link-preview/commit/75508aeb23ebd6e4889e051c92fc7d2fb7cfa6c3))
+
 ## [1.8.3](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.8.2...v1.8.3) (2021-11-23)
 
 

@@ -33,7 +33,7 @@ export default async function linkPreviewHandler(
       res.setHeader(key, value);
     });
     res.json(data);
-  } catch (err) {
+  } catch (err: any) {
     res.status(400).json({ message: err.message });
   }
 }

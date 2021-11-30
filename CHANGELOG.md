@@ -1,3 +1,10 @@
+## [1.8.5](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.8.4...v1.8.5) (2021-11-30)
+
+
+### Bug Fixes
+
+* build failure in Vercel ([e319901](https://github.com/pengx17/logseq-plugin-link-preview/commit/e3199017c80d080f56bcee47fba30f3f4efeb5a9))
+
 ## [1.8.4](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.8.3...v1.8.4) (2021-11-25)
 
 

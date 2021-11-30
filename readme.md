@@ -27,8 +27,11 @@ The easiest solution is to deploy your own backend to [Vercel](https://vercel.co
 - fork this plugin repository
 - import your forked repository as a new project in Vercel
 - configure it with `FRAMEWORK PRESET` to Other
-- override `INSTALL COMMAND` in Build settings to `npm i pnpm -g && pnpm i`
+- override `INSTALL COMMAND` in Build settings to `npm i pnpm -g && pnpm i` (See below)
 - click deploy. After deploy is done, you can now replace the `https://logseq-plugin-link-preview.vercel.app/` with your own backend URL.
+
+![image](https://user-images.githubusercontent.com/584378/143966444-da66cee8-f03d-44f4-8105-3545ab8aecf9.png)
+
 
 ## Demo
 

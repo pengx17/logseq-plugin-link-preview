@@ -10,7 +10,7 @@ specifiers:
   '@types/react-dom': 17.0.11
   '@vercel/node': 1.12.1
   '@vitejs/plugin-react': 1.1.0
-  conventional-changelog-conventionalcommits: 4.6.1
+  conventional-changelog-conventionalcommits: 4.6.3
   link-preview-js: ^2.1.8
   react: ^17.0.2
   react-dom: ^17.0.2
@@ -39,7 +39,7 @@ devDependencies:
   '@types/react-dom': 17.0.11
   '@vercel/node': 1.12.1
   '@vitejs/plugin-react': 1.1.0
-  conventional-changelog-conventionalcommits: 4.6.1
+  conventional-changelog-conventionalcommits: 4.6.3
   typescript: 4.5.2
   vercel: 23.1.2
   vite: 2.6.14
@@ -821,8 +821,8 @@ packages:
       xdg-basedir: 4.0.0
     dev: true
 
-  /conventional-changelog-conventionalcommits/4.6.1:
-    resolution: {integrity: sha512-lzWJpPZhbM1R0PIzkwzGBCnAkH5RKJzJfFQZcl/D+2lsJxAwGnDKBqn/F4C1RD31GJNn8NuKWQzAZDAVXPp2Mw==}
+  /conventional-changelog-conventionalcommits/4.6.3:
+    resolution: {integrity: sha512-LTTQV4fwOM4oLPad317V/QNQ1FY4Hju5qeBIM1uTHbrnCE+Eg4CdRZ3gO2pUeR+tzWdp80M2j3qFFEDWVqOV4g==}
     engines: {node: '>=10'}
     dependencies:
       compare-func: 2.0.0

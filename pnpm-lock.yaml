@@ -20,7 +20,7 @@ specifiers:
   vercel: 23.1.2
   vite: 2.6.14
   vite-plugin-windicss: 1.5.1
-  windicss: 3.2.1
+  windicss: 3.5.1
 
 dependencies:
   '@logseq/libs': 0.0.1-alpha.31
@@ -44,7 +44,7 @@ devDependencies:
   vercel: 23.1.2
   vite: 2.6.14
   vite-plugin-windicss: 1.5.1_vite@2.6.14
-  windicss: 3.2.1
+  windicss: 3.5.1
 
 packages:
 
@@ -549,7 +549,7 @@ packages:
     dependencies:
       debug: 4.3.2
       jiti: 1.12.9
-      windicss: 3.2.1
+      windicss: 3.5.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -563,7 +563,7 @@ packages:
       fast-glob: 3.2.7
       magic-string: 0.25.7
       micromatch: 4.0.4
-      windicss: 3.2.1
+      windicss: 3.5.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2608,7 +2608,7 @@ packages:
       chalk: 4.1.2
       debug: 4.3.2
       vite: 2.6.14
-      windicss: 3.2.1
+      windicss: 3.5.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2652,8 +2652,8 @@ packages:
       string-width: 4.2.2
     dev: true
 
-  /windicss/3.2.1:
-    resolution: {integrity: sha512-LusrIrryBFHAPQ/OOTbS4EWWuzI6eGeJglI9nQ3kDBr1cqH69NWt8Z8q59f9kTkgptXroejmWfksWwqgHs8EVw==}
+  /windicss/3.5.1:
+    resolution: {integrity: sha512-E1hYZATcZFci/XhGS0sJAMRxULjnK+glNukE78Ku7xeb3jxgMY55fFOdIrav+GjQCsgR+IZxPq9/DwmO6eyc4Q==}
     engines: {node: '>= 12'}
     hasBin: true
     dev: true

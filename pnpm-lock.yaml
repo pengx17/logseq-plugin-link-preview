@@ -7,7 +7,7 @@ specifiers:
   '@semantic-release/git': 10.0.1
   '@semantic-release/npm': 8.0.3
   '@types/react': 17.0.35
-  '@types/react-dom': 17.0.11
+  '@types/react-dom': 17.0.13
   '@vercel/node': 1.12.1
   '@vitejs/plugin-react': 1.1.0
   conventional-changelog-conventionalcommits: 4.6.1
@@ -36,7 +36,7 @@ devDependencies:
   '@semantic-release/git': 10.0.1
   '@semantic-release/npm': 8.0.3
   '@types/react': 17.0.35
-  '@types/react-dom': 17.0.11
+  '@types/react-dom': 17.0.13
   '@vercel/node': 1.12.1
   '@vitejs/plugin-react': 1.1.0
   conventional-changelog-conventionalcommits: 4.6.1
@@ -482,8 +482,8 @@ packages:
     resolution: {integrity: sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==}
     dev: true
 
-  /@types/react-dom/17.0.11:
-    resolution: {integrity: sha512-f96K3k+24RaLGVu/Y2Ng3e1EbZ8/cVJvypZWd7cy0ofCBaf2lcM46xNhycMZ2xGwbBjRql7hOlZ+e2WlJ5MH3Q==}
+  /@types/react-dom/17.0.13:
+    resolution: {integrity: sha512-wEP+B8hzvy6ORDv1QBhcQia4j6ea4SFIBttHYpXKPFZRviBvknq0FRh3VrIxeXUmsPkwuXVZrVGG7KUVONmXCQ==}
     dependencies:
       '@types/react': 17.0.35
     dev: true

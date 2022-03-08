@@ -1,3 +1,5 @@
+# [2.0.0](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.8.5...v2.0.0) (2022-03-08)
+
 ## [1.8.5](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.8.4...v1.8.5) (2021-11-30)
 
 

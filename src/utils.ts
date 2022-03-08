@@ -1,10 +1,6 @@
 import React from "react";
 import { LinkPreviewMetadata } from "./use-link-preview-metadata";
 
-export const isInlineMode = () => {
-  return !window.frameElement?.className.includes("lsp-iframe-sandbox");
-};
-
 export const getCardSize = (data: LinkPreviewMetadata) => {
   // If link has cover image
   const width = data.images && data.images.length > 0 ? 720 : 400;
@@ -55,7 +51,7 @@ export const usePreventFocus = () => {
         }
       });
     };
-    timer = setInterval(listener, 1000);
+    timer = window.setInterval(listener, 1000);
     window.addEventListener("focus", listener);
     return () => {
       window.removeEventListener("focus", listener);

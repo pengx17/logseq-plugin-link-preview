@@ -5,7 +5,7 @@ import {
   LinkPreviewMetadata,
   useLinkPreviewMetadata,
 } from "./use-link-preview-metadata";
-import { getCardSize, usePreventFocus } from "./utils";
+import { getCardSize } from "./utils";
 
 import "./hovering.css";
 
@@ -76,7 +76,8 @@ const useAdaptViewPort = (
 ) => {
   React.useEffect(() => {
     if (data && anchor && top) {
-      logseq.showMainUI();
+      // @ts-expect-error not published yet
+      logseq.showMainUI({ autoFocus: false });
       const elemBoundingRect = anchor.getBoundingClientRect();
       const [width, height] = getCardSize(data);
       let left = (elemBoundingRect.left + elemBoundingRect.right - width) / 2;
@@ -97,7 +98,7 @@ const useAdaptViewPort = (
         position: "fixed",
       });
     } else {
-      logseq.hideMainUI();
+      logseq.hideMainUI({ restoreEditingCursor: false });
     }
   }, [anchor, data]);
 };
@@ -109,7 +110,6 @@ export const HoverLinkPreview = () => {
     debouncedAnchor?.href,
     debouncedAnchor?.innerText
   );
-  usePreventFocus();
   useAdaptViewPort(data, debouncedAnchor);
 
   if (data) {

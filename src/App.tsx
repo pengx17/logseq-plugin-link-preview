@@ -2,7 +2,6 @@ import * as React from "react";
 import { SWRConfig } from "swr";
 import { localStorageProvider } from "./cache";
 import { HoverLinkPreview } from "./HoverLinkPreview";
-import { InlineLinkPreview } from "./InlineLinkPreview";
 
 // FIXME: adapt for dynamic theme mode change
 const useAdaptBackgroundColor = () => {
@@ -39,11 +38,11 @@ const useAdaptBackgroundColor = () => {
   }, []);
 };
 
-function App({ inline }: { inline: boolean }) {
+function App() {
   useAdaptBackgroundColor();
   return (
     <SWRConfig value={{ provider: localStorageProvider }}>
-      {inline ? <InlineLinkPreview /> : <HoverLinkPreview />}
+      <HoverLinkPreview />
     </SWRConfig>
   );
 }

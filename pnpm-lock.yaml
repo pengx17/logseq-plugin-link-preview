@@ -15,7 +15,7 @@ specifiers:
   react: ^17.0.2
   react-dom: ^17.0.2
   react-use: ^17.3.2
-  semantic-release: ^19.0.2
+  semantic-release: 19.0.2
   swr: ^1.2.2
   typescript: 4.6.2
   vercel: 24.0.0

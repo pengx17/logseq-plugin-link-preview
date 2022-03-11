@@ -76,7 +76,6 @@ const useAdaptViewPort = (
 ) => {
   React.useEffect(() => {
     if (data && anchor && top) {
-      // @ts-expect-error not published yet
       logseq.showMainUI({ autoFocus: false });
       const elemBoundingRect = anchor.getBoundingClientRect();
       const [width, height] = getCardSize(data);

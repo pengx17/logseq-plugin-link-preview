@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.0.0...v2.1.0) (2022-03-16)
+
+
+### Features
+
+* remove remote api since plugins can send CORS calls without proxty ([cf565cb](https://github.com/pengx17/logseq-plugin-link-preview/commit/cf565cb491370f0db6c455d850e97aeab702efbe))
+
 # [2.0.0](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.8.5...v2.0.0) (2022-03-08)
 
 ## [1.8.5](https://github.com/pengx17/logseq-plugin-link-preview/compare/v1.8.4...v1.8.5) (2021-11-30)

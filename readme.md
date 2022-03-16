@@ -7,31 +7,12 @@ Also this plugin will register a `Convert to Link Card` command for you to conve
 
 ![](hover-demo.png)
 
-## Disclaimer 🚨
-
-- This plugin WILL send network requests to the author's server https://logseq-plugin-link-preview.vercel.app/. If you feel insecure about it, please either do not use it, or deploy it yourself, which is explained in the next session.
-- The link preview does not always work. e.g., internal links inside of your private network.
-
 ## Features
 
 - Show link preview when hovering any external link in Logseq
 - Convert the link to a link card when you use the `Convert to Link Card` command
 - Cache the results locally
 - Light & dark theme
-
-### Deploy your own backend
-
-Due to some technical limitations (CORS), the link preview metadata could not work without a proxy server.
-The easiest solution is to deploy your own backend to [Vercel](https://vercel.com/) using serverless functions:
-
-- fork this plugin repository
-- import your forked repository as a new project in Vercel
-- configure it with `FRAMEWORK PRESET` to Other
-- override `INSTALL COMMAND` in Build settings to `npm i pnpm -g && pnpm i` (See below)
-- click deploy. After deploy is done, you can now replace the `https://logseq-plugin-link-preview.vercel.app/` with your own backend URL.
-
-![image](https://user-images.githubusercontent.com/584378/143966444-da66cee8-f03d-44f4-8105-3545ab8aecf9.png)
-
 
 ## Demo
 

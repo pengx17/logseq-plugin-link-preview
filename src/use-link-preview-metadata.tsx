@@ -1,18 +1,18 @@
 import * as React from "react";
 import useSWR from "swr";
 
-// Change this if you want to self-deploy
-const domain = "https://logseq-plugin-link-preview.vercel.app";
+import { getLinkPreview } from "link-preview-js";
 
-export const fetcher = (url: string) =>
-  fetch(`${domain}/api/link-preview?url=${encodeURIComponent(url)}`).then(
-    (res) => {
-      if (res.status >= 400) {
-        throw res.statusText;
-      }
-      return res.json();
-    }
-  );
+export const fetcher = async (url: string) => {
+  const data = await getLinkPreview(Array.isArray(url) ? url[0] : url, {
+    timeout: 3000,
+    headers: {
+      "user-agent": "googlebot",
+    },
+  });
+
+  return data;
+};
 
 interface BaseType {
   mediaType: string;

@@ -1,6 +1,8 @@
 import "@logseq/libs";
 import React from "react";
 import ReactDOM from "react-dom";
+import { logseq as LS } from "../package.json";
+
 import App from "./App";
 import { registerMacro as registerMacroRender } from "./macro";
 
@@ -17,6 +19,5 @@ function main() {
   }
 }
 
-const pluginId = logseq.baseInfo.id;
-console.info(`#${pluginId}: MAIN`);
+console.info(`#${LS.id}: MAIN`);
 logseq.ready(main).catch(console.error);

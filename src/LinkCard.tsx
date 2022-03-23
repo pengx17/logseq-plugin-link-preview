@@ -22,7 +22,7 @@ export const LinkCard = ({ data, ...rest }: { data: LinkPreviewMetadata }) => {
             {data.favicons?.length > 0 && (
               <img src={data.favicons[0]} width={16} height={16} />
             )}
-            <span className="text-container-url">{data.url}</span>
+            <span className="link_preview__text-container-url">{data.url}</span>
           </div>
         </div>
         {data.images?.[0] && (

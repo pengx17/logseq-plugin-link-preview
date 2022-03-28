@@ -6,9 +6,10 @@ import { getLinkPreview } from "link-preview-js";
 export const fetcher = async (url: string) => {
   const data = await getLinkPreview(Array.isArray(url) ? url[0] : url, {
     timeout: 3000,
-    headers: {
-      "user-agent": "googlebot",
-    },
+    // TODO: this is not doable in the browser context
+    // headers: {
+    //   "user-agent": "googlebot",
+    // },
   });
 
   return data;

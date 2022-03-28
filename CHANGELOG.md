@@ -1,3 +1,10 @@
+## [2.1.2](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.1.1...v2.1.2) (2022-03-28)
+
+
+### Bug Fixes
+
+* disable user-agent header for now ([aaa1ec9](https://github.com/pengx17/logseq-plugin-link-preview/commit/aaa1ec9a3101a7f3a90ec20fe436b36ee8a1d959))
+
 ## [2.1.1](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.1.0...v2.1.1) (2022-03-23)
 
 

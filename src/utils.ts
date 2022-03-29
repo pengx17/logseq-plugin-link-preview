@@ -3,7 +3,8 @@ import { LinkPreviewMetadata } from "./use-link-preview-metadata";
 
 export const getCardSize = (data: LinkPreviewMetadata) => {
   // If link has cover image
-  const width = data.images && data.images.length > 0 ? 720 : 400;
+  let width =
+    data.images && data.images.length > 0 && data.description ? 720 : 400;
 
   // If link showing placeholder
   let height = 140;
@@ -22,7 +23,7 @@ export const getCardSize = (data: LinkPreviewMetadata) => {
     height = 100;
   }
 
-  if (!data.description) {
+  if (!data.description && data.images?.length !== 0) {
     height -= 60;
   }
 

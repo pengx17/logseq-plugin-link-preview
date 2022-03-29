@@ -1,3 +1,10 @@
+## [2.1.3](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.1.2...v2.1.3) (2022-03-29)
+
+
+### Bug Fixes
+
+* adjust link preview styles ([bc184f8](https://github.com/pengx17/logseq-plugin-link-preview/commit/bc184f85264d43e0b81e9dc8ca084649de01c0fa))
+
 ## [2.1.2](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.1.1...v2.1.2) (2022-03-28)
 
 

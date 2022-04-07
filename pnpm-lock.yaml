@@ -6,7 +6,7 @@ specifiers:
   '@semantic-release/exec': 6.0.3
   '@semantic-release/git': 10.0.1
   '@semantic-release/npm': 9.0.1
-  '@types/react': 17.0.43
+  '@types/react': 18.0.0
   '@types/react-dom': 17.0.14
   '@vitejs/plugin-react': 1.2.0
   conventional-changelog-conventionalcommits: 4.6.3
@@ -35,7 +35,7 @@ devDependencies:
   '@semantic-release/exec': 6.0.3_semantic-release@19.0.2
   '@semantic-release/git': 10.0.1_semantic-release@19.0.2
   '@semantic-release/npm': 9.0.1_semantic-release@19.0.2
-  '@types/react': 17.0.43
+  '@types/react': 18.0.0
   '@types/react-dom': 17.0.14
   '@vitejs/plugin-react': 1.2.0
   conventional-changelog-conventionalcommits: 4.6.3
@@ -669,11 +669,11 @@ packages:
   /@types/react-dom/17.0.14:
     resolution: {integrity: sha512-H03xwEP1oXmSfl3iobtmQ/2dHF5aBHr8aUMwyGZya6OW45G+xtdzmq6HkncefiBt5JU8DVyaWl/nWZbjZCnzAQ==}
     dependencies:
-      '@types/react': 17.0.43
+      '@types/react': 18.0.0
     dev: true
 
-  /@types/react/17.0.43:
-    resolution: {integrity: sha512-8Q+LNpdxf057brvPu1lMtC5Vn7J119xrP1aq4qiaefNioQUYANF/CYeK4NsKorSZyUGJ66g0IM+4bbjwx45o2A==}
+  /@types/react/18.0.0:
+    resolution: {integrity: sha512-7+K7zEQYu7NzOwQGLR91KwWXXDzmTFODRVizJyIALf6RfLv2GDpqpknX64pvRVILXCpXi7O/pua8NGk44dLvJw==}
     dependencies:
       '@types/prop-types': 15.7.4
       '@types/scheduler': 0.16.2

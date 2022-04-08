@@ -7,7 +7,7 @@ specifiers:
   '@semantic-release/git': 10.0.1
   '@semantic-release/npm': 9.0.1
   '@types/react': 18.0.0
-  '@types/react-dom': 17.0.14
+  '@types/react-dom': 18.0.0
   '@vitejs/plugin-react': 1.2.0
   conventional-changelog-conventionalcommits: 4.6.3
   link-preview-js: ^2.1.13
@@ -36,7 +36,7 @@ devDependencies:
   '@semantic-release/git': 10.0.1_semantic-release@19.0.2
   '@semantic-release/npm': 9.0.1_semantic-release@19.0.2
   '@types/react': 18.0.0
-  '@types/react-dom': 17.0.14
+  '@types/react-dom': 18.0.0
   '@vitejs/plugin-react': 1.2.0
   conventional-changelog-conventionalcommits: 4.6.3
   semantic-release: 19.0.2
@@ -666,8 +666,8 @@ packages:
     resolution: {integrity: sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==}
     dev: true
 
-  /@types/react-dom/17.0.14:
-    resolution: {integrity: sha512-H03xwEP1oXmSfl3iobtmQ/2dHF5aBHr8aUMwyGZya6OW45G+xtdzmq6HkncefiBt5JU8DVyaWl/nWZbjZCnzAQ==}
+  /@types/react-dom/18.0.0:
+    resolution: {integrity: sha512-49897Y0UiCGmxZqpC8Blrf6meL8QUla6eb+BBhn69dTXlmuOlzkfr7HHY/O8J25e1lTUMs+YYxSlVDAaGHCOLg==}
     dependencies:
       '@types/react': 18.0.0
     dev: true

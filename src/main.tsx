@@ -1,6 +1,6 @@
 import "@logseq/libs";
 import React from "react";
-import ReactDOM from "react-dom";
+import * as ReactDOM from "react-dom/client";
 import { logseq as LS } from "../package.json";
 
 import App from "./App";
@@ -10,11 +10,11 @@ function main() {
   registerMacroRender();
 
   if (top) {
-    ReactDOM.render(
+    const root = ReactDOM.createRoot(document.getElementById("app")!);
+    root.render(
       <React.StrictMode>
         <App />
-      </React.StrictMode>,
-      document.getElementById("app")
+      </React.StrictMode>
     );
   }
 }

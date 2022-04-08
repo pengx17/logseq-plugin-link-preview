@@ -2,6 +2,8 @@ import * as React from "react";
 import { SWRConfig } from "swr";
 import { localStorageProvider } from "./cache";
 import { HoverLinkPreview } from "./HoverLinkPreview";
+import { Prompt } from "./Prompt";
+import { useAppStateStore } from "./store";
 
 // FIXME: adapt for dynamic theme mode change
 const useAdaptBackgroundColor = () => {
@@ -40,9 +42,14 @@ const useAdaptBackgroundColor = () => {
 
 function App() {
   useAdaptBackgroundColor();
+  const appState = useAppStateStore();
+  console.log(appState)
+
   return (
+    // @ts-expect-error ???
     <SWRConfig value={{ provider: localStorageProvider }}>
-      <HoverLinkPreview />
+      {appState.type === 'hovering' && <HoverLinkPreview />}
+      {appState.type === 'prompt' && <Prompt />}
     </SWRConfig>
   );
 }

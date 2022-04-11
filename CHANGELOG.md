@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.1.5...v2.2.0) (2022-04-11)
+
+
+### Features
+
+* add static link card command ([1f79600](https://github.com/pengx17/logseq-plugin-link-preview/commit/1f796006aae2eddf96bc0644cf0b6896c59f0406))
+
 ## [2.1.5](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.1.4...v2.1.5) (2022-04-11)
 
 

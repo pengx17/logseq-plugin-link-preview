@@ -1,3 +1,10 @@
+## [2.1.5](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.1.4...v2.1.5) (2022-04-11)
+
+
+### Bug Fixes
+
+* adjust inline card size with media query ([d2c4bd4](https://github.com/pengx17/logseq-plugin-link-preview/commit/d2c4bd4fc84d92dbb993f133535f01642ab92408))
+
 ## [2.1.4](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.1.3...v2.1.4) (2022-04-11)
 
 

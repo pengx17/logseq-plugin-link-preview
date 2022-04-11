@@ -14,6 +14,20 @@ const urlRegex =
 
 const macroPrefix = ":linkpreview";
 
+async function prompt(message: string) {
+  return new Promise<string>((resolve) => {
+    // render a prompt
+    const Dialog = () => (
+      <dialog open className="">
+        <form method="dialog">
+          <p>{message}</p>
+          <button>OK</button>
+        </form>
+      </dialog>
+    );
+  });
+}
+
 export const registerMacro = () => {
   // FIXME: seems not working because Logseq will capture mousedown events on blocks
   logseq.provideModel({
@@ -50,19 +64,31 @@ export const registerMacro = () => {
     }
   });
 
-  // This command only support to replace the whole block
-  logseq.Editor.registerSlashCommand("Convert to Link Card 🪧", async () => {
-    const maybeUrl = (await logseq.Editor.getEditingBlockContent()).trim();
-    const id = await logseq.Editor.getCurrentBlock();
+  // This command only support to replace the whole block for now
+  logseq.Editor.registerSlashCommand(
+    "[Link Preview] Convert current link to a Link Card 🪧",
+    async () => {
+      const maybeUrl = (await logseq.Editor.getEditingBlockContent()).trim();
+      const id = await logseq.Editor.getCurrentBlock();
 
-    if (urlRegex.test(maybeUrl) && id) {
-      const newContent = `{{renderer ${macroPrefix},${maybeUrl}}}`;
-      logseq.Editor.updateBlock(id.uuid, newContent);
-    } else {
-      logseq.App.showMsg(
-        "The block content does not seem to be a valid URL",
-        "warning"
-      );
+      if (urlRegex.test(maybeUrl) && id) {
+        const newContent = `{{renderer ${macroPrefix},${maybeUrl}}}`;
+        logseq.Editor.updateBlock(id.uuid, newContent);
+      } else {
+        logseq.App.showMsg(
+          "The block content does not seem to be a valid URL",
+          "warning"
+        );
+      }
     }
-  });
+  );
+
+  // TODO
+  // logseq.Editor.registerSlashCommand(
+  //   "[Link Preview] Insert a Link Card 🪧",
+  //   async () => {
+  //     const url = top?.prompt("Please give a valid URL");
+  //     console.log(url);
+  //   }
+  // );
 };

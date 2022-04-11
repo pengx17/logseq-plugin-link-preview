@@ -1,5 +1,5 @@
 import * as React from "react";
-import useSWR from "swr";
+import useSWRImmutable from "swr/immutable";
 
 import { getLinkPreview } from "link-preview-js";
 
@@ -162,7 +162,7 @@ export const useLinkPreviewMetadata = (
   url?: string | null,
   altText?: string | null
 ): LinkPreviewMetadata | null => {
-  const { data, error } = useSWR(url ?? null, fetcher);
+  const { data, error } = useSWRImmutable(url || null, fetcher);
   return React.useMemo(() => {
     return url ? toLinkPreviewMetadata(url, altText, data, error) : null;
   }, [url, altText, data, error]);

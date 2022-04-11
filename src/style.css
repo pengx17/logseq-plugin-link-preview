@@ -12,6 +12,18 @@
     Noto Color Emoji;
 }
 
+@media (max-width: 1200px) { 
+  .lsp-hook-ui-slot .link_preview__root {
+    max-width: 640px;
+  }
+}
+
+@media (max-width: 760px) { 
+  .lsp-hook-ui-slot .link_preview__root {
+    max-width: 480px;
+  }
+}
+
 .link_preview__root,
 .link_preview__root * {
   box-sizing: border-box;

@@ -83,11 +83,12 @@ export const registerMacro = () => {
     }
   );
 
-  logseq.Editor.registerSlashCommand(
-    "[Link Preview] Insert a Link Card 🪧",
-    async () => {
-      const url = top?.prompt("Please give a valid URL");
-      console.log(url);
-    }
-  );
+  // TODO
+  // logseq.Editor.registerSlashCommand(
+  //   "[Link Preview] Insert a Link Card 🪧",
+  //   async () => {
+  //     const url = top?.prompt("Please give a valid URL");
+  //     console.log(url);
+  //   }
+  // );
 };

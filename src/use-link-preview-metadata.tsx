@@ -162,7 +162,7 @@ export const useLinkPreviewMetadata = (
   url?: string | null,
   altText?: string | null
 ): LinkPreviewMetadata | null => {
-  const { data, error } = useSWR(url ?? null, fetcher);
+  const { data, error } = useSWR(url || null, fetcher);
   return React.useMemo(() => {
     return url ? toLinkPreviewMetadata(url, altText, data, error) : null;
   }, [url, altText, data, error]);

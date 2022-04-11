@@ -1,6 +1,6 @@
 import "@logseq/libs";
 import React from "react";
-import * as ReactDOM from "react-dom/client";
+import * as ReactDOM from "react-dom";
 import { logseq as LS } from "../package.json";
 
 import App from "./App";
@@ -10,11 +10,13 @@ function main() {
   registerMacroRender();
 
   if (top) {
-    const root = ReactDOM.createRoot(document.getElementById("app")!);
-    root.render(
+    // FIXME: the following cannot use "createRoot" API yet due to
+    // https://github.com/vercel/swr/issues/1904
+    ReactDOM.render(
       <React.StrictMode>
         <App />
-      </React.StrictMode>
+      </React.StrictMode>,
+      document.getElementById("app")!
     );
   }
 }

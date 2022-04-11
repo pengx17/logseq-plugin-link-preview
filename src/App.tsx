@@ -46,7 +46,6 @@ function App() {
   console.log(appState)
 
   return (
-    // @ts-expect-error ???
     <SWRConfig value={{ provider: localStorageProvider }}>
       {appState.type === 'hovering' && <HoverLinkPreview />}
       {appState.type === 'prompt' && <Prompt />}

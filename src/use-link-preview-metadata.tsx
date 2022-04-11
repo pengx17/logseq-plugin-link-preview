@@ -3,7 +3,7 @@ import useSWRImmutable from "swr/immutable";
 
 import { getLinkPreview } from "link-preview-js";
 
-export const fetcher = async (url: string) => {
+export const getOpenGraphMetadata = async (url: string) => {
   const data = await getLinkPreview(Array.isArray(url) ? url[0] : url, {
     timeout: 3000,
     // TODO: this is not doable in the browser context
@@ -151,7 +151,7 @@ export async function fetchLinkPreviewMetadata(
   let data: any;
   let error: any;
   try {
-    data = await fetcher(url);
+    data = await getOpenGraphMetadata(url);
   } catch (err) {
     error = err;
   }
@@ -162,7 +162,7 @@ export const useLinkPreviewMetadata = (
   url?: string | null,
   altText?: string | null
 ): LinkPreviewMetadata | null => {
-  const { data, error } = useSWRImmutable(url || null, fetcher);
+  const { data, error } = useSWRImmutable(url || null, getOpenGraphMetadata);
   return React.useMemo(() => {
     return url ? toLinkPreviewMetadata(url, altText, data, error) : null;
   }, [url, altText, data, error]);

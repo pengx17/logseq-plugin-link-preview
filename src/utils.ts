@@ -1,6 +1,10 @@
 import React from "react";
 import { LinkPreviewMetadata } from "./use-link-preview-metadata";
 
+export const urlRegex =
+  /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)$/;
+
+
 export const getCardSize = (data: LinkPreviewMetadata) => {
   // If link has cover image
   let width =

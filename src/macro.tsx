@@ -3,30 +3,18 @@ import React from "react";
 import ReactDOMServer from "react-dom/server";
 import { localStorageProvider } from "./cache";
 import { LinkCard } from "./LinkCard";
+import { waitForPrompt } from "./store";
 import rawStyle from "./style.css";
+import minStyle from "./min-style.tcss?raw";
+
 import {
   fetchLinkPreviewMetadata,
+  getOpenGraphMetadata,
   toLinkPreviewMetadata,
 } from "./use-link-preview-metadata";
-
-const urlRegex =
-  /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)$/;
+import { urlRegex } from "./utils";
 
 const macroPrefix = ":linkpreview";
-
-async function prompt(message: string) {
-  return new Promise<string>((resolve) => {
-    // render a prompt
-    const Dialog = () => (
-      <dialog open className="">
-        <form method="dialog">
-          <p>{message}</p>
-          <button>OK</button>
-        </form>
-      </dialog>
-    );
-  });
-}
 
 export const registerMacro = () => {
   // FIXME: seems not working because Logseq will capture mousedown events on blocks
@@ -83,12 +71,39 @@ export const registerMacro = () => {
     }
   );
 
-  // TODO
-  // logseq.Editor.registerSlashCommand(
-  //   "[Link Preview] Insert a Link Card 🪧",
-  //   async () => {
-  //     const url = top?.prompt("Please give a valid URL");
-  //     console.log(url);
-  //   }
-  // );
+  logseq.Editor.registerSlashCommand(
+    "[Link Preview] Insert a static Link Card (will be very long)",
+    async () => {
+      const id = await logseq.Editor.getCurrentBlock();
+      const url = await waitForPrompt("Give a valid URL");
+      if (!urlRegex.test(url)) {
+        logseq.App.showMsg("This does not seem to be a valid URL", "warning");
+      } else if (id) {
+        if (id && urlRegex.test(url)) {
+          const marker = `Fetching metadata for ${url} ... ⏳`;
+          await logseq.Editor.insertAtEditingCursor(marker);
+          logseq.Editor.exitEditingMode();
+          let res = "";
+          try {
+            const meta = await getOpenGraphMetadata(url);
+            res = ReactDOMServer.renderToStaticMarkup(
+              <>
+                <LinkCard data={toLinkPreviewMetadata(url, null, meta)} />
+                <style>{minStyle}</style>
+              </>
+            );
+          } catch (err) {
+            res = "Failed to get metadata for " + url;
+          }
+          const blockContent = await logseq.Editor.getBlock(id.uuid);
+          if (blockContent?.content.includes(marker)) {
+            logseq.Editor.updateBlock(
+              id.uuid,
+              blockContent?.content.replace(marker, res)
+            );
+          }
+        }
+      }
+    }
+  );
 };

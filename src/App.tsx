@@ -43,12 +43,10 @@ const useAdaptBackgroundColor = () => {
 function App() {
   useAdaptBackgroundColor();
   const appState = useAppStateStore();
-  console.log(appState)
-
   return (
     <SWRConfig value={{ provider: localStorageProvider }}>
-      {appState.type === 'hovering' && <HoverLinkPreview />}
-      {appState.type === 'prompt' && <Prompt />}
+      {appState.value.type === 'hovering' && <HoverLinkPreview />}
+      {appState.value.type === 'prompt' && <Prompt />}
     </SWRConfig>
   );
 }

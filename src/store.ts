@@ -1,33 +1,4 @@
-import { useSyncExternalStore } from "react";
-
-// A super naive implementation of an external store
-class ExternalStore<T> {
-  listeners: Set<() => void>;
-  constructor(private _value: T) {
-    this.listeners = new Set();
-  }
-  subscribe = (listener: () => void) => {
-    this.listeners.add(listener);
-    return () => {
-      this.listeners.delete(listener);
-    };
-  };
-
-  get value() {
-    return this._value;
-  }
-
-  set value(v: T) {
-    if (this._value !== v) {
-      this._value = v;
-      this.listeners.forEach((l) => l());
-    }
-  }
-
-  snapshot = () => {
-    return this.value;
-  };
-}
+import { proxy, subscribe, useSnapshot } from "valtio";
 
 type AppState =
   | {
@@ -36,11 +7,27 @@ type AppState =
   | {
       type: "prompt";
       message: string;
-      input: string;
+      input?: string;
     };
 
-export const appStateStore = new ExternalStore<AppState>({ type: "hovering" });
+export const appStateStore = proxy<{ value: AppState }>({
+  value: { type: "hovering" },
+});
 
 export const useAppStateStore = () => {
-  return useSyncExternalStore(appStateStore.subscribe, appStateStore.snapshot);
+  return useSnapshot(appStateStore);
+};
+
+export const waitForPrompt = async (message: string) => {
+  return new Promise<string>((res) => {
+    appStateStore.value = { type: "prompt", message: message };
+    const unsub = subscribe(appStateStore, () => {
+      if (appStateStore.value.type === "prompt" && appStateStore.value.input) {
+        unsub();
+        const url = appStateStore.value.input;
+        appStateStore.value = { type: "hovering" };
+        res(url);
+      }
+    });
+  });
 };

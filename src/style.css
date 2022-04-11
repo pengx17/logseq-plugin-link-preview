@@ -12,13 +12,13 @@
     Noto Color Emoji;
 }
 
-@media (max-width: 1200px) { 
+@media (max-width: 1200px) {
   .lsp-hook-ui-slot .link_preview__root {
     max-width: 640px;
   }
 }
 
-@media (max-width: 760px) { 
+@media (max-width: 760px) {
   .lsp-hook-ui-slot .link_preview__root {
     max-width: 480px;
   }
@@ -118,4 +118,26 @@
 .link_preview__root img {
   box-shadow: unset;
   margin-left: unset;
+}
+
+.link_preview__prompt {
+  font-family: Inter var, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+    Noto Color Emoji;
+}
+
+.link_preview__prompt-backdrop {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1px);
+}
+
+.link_preview__prompt {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.2s;
 }

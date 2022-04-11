@@ -1,3 +1,10 @@
+## [2.1.4](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.1.3...v2.1.4) (2022-04-11)
+
+
+### Bug Fixes
+
+* cache does not work ([#78](https://github.com/pengx17/logseq-plugin-link-preview/issues/78)) ([81ca9a9](https://github.com/pengx17/logseq-plugin-link-preview/commit/81ca9a958b4176ab79ed5ac4b961a6c520ae7638))
+
 ## [2.1.3](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.1.2...v2.1.3) (2022-03-29)
 
 

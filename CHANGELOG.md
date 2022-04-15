@@ -1,3 +1,10 @@
+## [2.2.1](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.2.0...v2.2.1) (2022-04-15)
+
+
+### Bug Fixes
+
+* max link card width on mobile ([572cc25](https://github.com/pengx17/logseq-plugin-link-preview/commit/572cc254ebdf0a5918d0fab0cdf1942ae350c3d1))
+
 # [2.2.0](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.1.5...v2.2.0) (2022-04-11)
 
 

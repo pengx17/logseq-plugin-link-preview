@@ -1,3 +1,10 @@
+## [2.2.2](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.2.1...v2.2.2) (2022-04-18)
+
+
+### Bug Fixes
+
+* should hide link preview when typing ([7cde2f0](https://github.com/pengx17/logseq-plugin-link-preview/commit/7cde2f0b4e0e20350e6eff40c8901fcd728957f8))
+
 ## [2.2.1](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.2.0...v2.2.1) (2022-04-15)
 
 

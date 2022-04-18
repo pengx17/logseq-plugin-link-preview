@@ -4,10 +4,21 @@ import { LinkPreviewMetadata } from "./use-link-preview-metadata";
 import { getCardSize } from "./utils";
 
 // Credits: adopted from innos.io
-export const LinkCard = ({ data, ...rest }: { data: LinkPreviewMetadata }) => {
+export const LinkCard = ({
+  data,
+  style,
+  ...rest
+}: {
+  data: LinkPreviewMetadata;
+  style?: React.CSSProperties;
+}) => {
   const [width, height] = getCardSize(data);
   return (
-    <a style={{ width, height }} className="link_preview__root" {...rest}>
+    <a
+      style={{ width, height, ...(style ?? {}) }}
+      className="link_preview__root"
+      {...rest}
+    >
       <div className="link_preview__card-container">
         <div className="link_preview__text-container">
           {data.title && (

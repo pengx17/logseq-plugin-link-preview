@@ -37,7 +37,7 @@ const useAdaptBackgroundColor = () => {
         secondaryTextColor
       );
     }
-  }, []);
+  });
 };
 
 function App() {

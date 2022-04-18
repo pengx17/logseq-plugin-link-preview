@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useDebounce } from "react-use";
+import { useIsTyping } from "use-is-typing";
 import { LinkCard } from "./LinkCard";
 import {
   LinkPreviewMetadata,
@@ -111,14 +112,27 @@ export const HoverLinkPreview = () => {
   );
   useAdaptViewPort(data, debouncedAnchor);
 
+  const [isTyping, register] = useIsTyping();
+
+  React.useEffect(() => {
+    if (top?.document) {
+      register(top.document.body as any);
+    }
+  }, []);
+
   if (data) {
     return (
       <LinkCard
         data={data}
-        // @ts-expect-error
+        // @ts-expect-error ???
         href={data.url}
         rel="noopener noreferrer"
         target="_blank"
+        style={{
+          opacity: isTyping ? 0 : 1,
+          transition: "opacity 0.2s",
+          pointerEvents: isTyping ? "none" : "auto",
+        }}
       />
     );
   }

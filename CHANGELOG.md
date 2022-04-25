@@ -1,3 +1,10 @@
+## [2.2.3](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.2.2...v2.2.3) (2022-04-25)
+
+
+### Bug Fixes
+
+* add missing url for inserted card ([5c7ff3a](https://github.com/pengx17/logseq-plugin-link-preview/commit/5c7ff3aba48d2f0a61709056ae1d41555a831c20))
+
 ## [2.2.2](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.2.1...v2.2.2) (2022-04-18)
 
 

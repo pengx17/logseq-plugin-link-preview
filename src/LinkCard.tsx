@@ -17,6 +17,8 @@ export const LinkCard = ({
     <a
       style={{ width, height, ...(style ?? {}) }}
       className="link_preview__root"
+      href={data.url}
+      target="_blank"
       {...rest}
     >
       <div className="link_preview__card-container">

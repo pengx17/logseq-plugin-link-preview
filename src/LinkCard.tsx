@@ -15,6 +15,7 @@ export const LinkCard = ({
   const [width, height] = getCardSize(data);
   return (
     <a
+      inject-placeholder="true" // will be used for injecting raw text here
       style={{ width, height, ...(style ?? {}) }}
       className="link_preview__root"
       href={data.url}

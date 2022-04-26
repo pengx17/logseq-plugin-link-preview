@@ -16,6 +16,8 @@ import { urlRegex } from "./utils";
 
 const macroPrefix = ":linkpreview";
 
+const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
 export const registerMacro = () => {
   // FIXME: seems not working because Logseq will capture mousedown events on blocks
   logseq.provideModel({
@@ -82,8 +84,9 @@ export const registerMacro = () => {
         if (id && urlRegex.test(url)) {
           const marker = `Fetching metadata for ${url} ... ⏳`;
           await logseq.Editor.insertAtEditingCursor(marker);
-          logseq.Editor.exitEditingMode();
+          await logseq.Editor.exitEditingMode();
           let res = "";
+          const d = delay(1000); // wait at least 1s
           try {
             const meta = await getOpenGraphMetadata(url);
             res = ReactDOMServer.renderToStaticMarkup(
@@ -92,16 +95,25 @@ export const registerMacro = () => {
                 <style>{minStyle}</style>
               </>
             );
+            res = res.replace(
+              'inject-placeholder="true"',
+              'onmousedown="(function(e){e.stopPropagation();})(event)"'
+            );
           } catch (err) {
             res = "Failed to get metadata for " + url;
           }
-          const blockContent = await logseq.Editor.getBlock(id.uuid);
+          await d;
+          // It seems Logseq does not have the latest content in the API too soon
+          const blockContent = await logseq.Editor.getBlock(id.uuid, {
+            includeChildren: true,
+          });
           if (blockContent?.content.includes(marker)) {
             logseq.Editor.updateBlock(
               id.uuid,
               blockContent?.content.replace(marker, res)
             );
           }
+          console.log(blockContent);
         }
       }
     }

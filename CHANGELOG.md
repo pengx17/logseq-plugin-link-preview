@@ -1,3 +1,10 @@
+## [2.2.4](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.2.3...v2.2.4) (2022-04-26)
+
+
+### Bug Fixes
+
+* generated long link card click issue ([7caaa78](https://github.com/pengx17/logseq-plugin-link-preview/commit/7caaa785ce6c7fbd2bc3f126ef2d541c67b04bbc))
+
 ## [2.2.3](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.2.2...v2.2.3) (2022-04-25)
 
 

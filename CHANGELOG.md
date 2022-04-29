@@ -1,3 +1,10 @@
+## [2.2.5](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.2.4...v2.2.5) (2022-04-29)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @logseq/libs to ^0.0.6 ([#87](https://github.com/pengx17/logseq-plugin-link-preview/issues/87)) ([09612fb](https://github.com/pengx17/logseq-plugin-link-preview/commit/09612fb0cc4e8226c81ba34ec373a3c9c0451beb))
+
 ## [2.2.4](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.2.3...v2.2.4) (2022-04-26)
 
 

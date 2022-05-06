@@ -40,7 +40,7 @@ export const registerMacro = () => {
         <LinkCard data={toLinkPreviewMetadata(url, null, cached)} />
       );
       logseq.provideUI({
-        key: "linkpreview",
+        key: "linkpreview__" + slot,
         slot,
         reset: true,
         template: `<span data-on-click="openExternalLink" data-url="${url}">${inner}</span>`,

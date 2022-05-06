@@ -1,3 +1,10 @@
+## [2.2.6](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.2.5...v2.2.6) (2022-05-06)
+
+
+### Bug Fixes
+
+* multiple linkcard macro per page ([8a697a0](https://github.com/pengx17/logseq-plugin-link-preview/commit/8a697a044cb71e2b02e3d02c30740bc7d3af7b62))
+
 ## [2.2.5](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.2.4...v2.2.5) (2022-04-29)
 
 

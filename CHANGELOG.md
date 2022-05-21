@@ -1,3 +1,10 @@
+## [2.2.7](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.2.6...v2.2.7) (2022-05-21)
+
+
+### Bug Fixes
+
+* editing restore issue ([1c5b8f2](https://github.com/pengx17/logseq-plugin-link-preview/commit/1c5b8f2edf3e18517d4d22f5f8bca4a59ff089c9))
+
 ## [2.2.6](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.2.5...v2.2.6) (2022-05-06)
 
 

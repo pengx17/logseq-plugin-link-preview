@@ -98,7 +98,7 @@ const useAdaptViewPort = (
         position: "fixed",
       });
     } else {
-      logseq.hideMainUI({ restoreEditingCursor: false });
+      logseq.hideMainUI({ restoreEditingCursor: true });
     }
   }, [anchor, data]);
 };

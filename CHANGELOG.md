@@ -1,3 +1,10 @@
+## [2.2.8](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.2.7...v2.2.8) (2022-06-29)
+
+
+### Bug Fixes
+
+* should not open external link twice ([afd20d0](https://github.com/pengx17/logseq-plugin-link-preview/commit/afd20d07138ec576a968a1886eb8076d71ebbcfd))
+
 ## [2.2.7](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.2.6...v2.2.7) (2022-05-21)
 
 

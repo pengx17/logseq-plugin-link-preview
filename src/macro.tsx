@@ -22,6 +22,7 @@ export const registerMacro = () => {
   // FIXME: seems not working because Logseq will capture mousedown events on blocks
   logseq.provideModel({
     openExternalLink(e: any) {
+      e.stopPropagation();
       const { url } = e.dataset;
       logseq.App.openExternalLink(url);
     },

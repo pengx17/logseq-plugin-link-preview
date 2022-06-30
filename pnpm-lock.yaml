@@ -21,7 +21,7 @@ specifiers:
   valtio: ^1.6.1
   vite: 2.9.9
   vite-plugin-logseq: 1.1.2
-  windicss: 3.5.4
+  windicss: 3.5.6
 
 dependencies:
   '@logseq/libs': 0.0.6
@@ -46,7 +46,7 @@ devDependencies:
   typescript: 4.6.4
   vite: 2.9.9
   vite-plugin-logseq: 1.1.2
-  windicss: 3.5.4
+  windicss: 3.5.6
 
 packages:
 
@@ -3377,8 +3377,8 @@ packages:
       isexe: 2.0.0
     dev: true
 
-  /windicss/3.5.4:
-    resolution: {integrity: sha512-x2Iu0a69dtNiKHMkR886lx0WKbZI5GqvXyvGBCJ2VA6rcjKYjnzCA/Ljd6hNQBfqlkSum8J+qAVcCfLzQFI4rQ==}
+  /windicss/3.5.6:
+    resolution: {integrity: sha512-P1mzPEjgFMZLX0ZqfFht4fhV/FX8DTG7ERG1fBLiWvd34pTLVReS5CVsewKn9PApSgXnVfPWwvq+qUsRwpnwFA==}
     engines: {node: '>= 12'}
     hasBin: true
     dev: true

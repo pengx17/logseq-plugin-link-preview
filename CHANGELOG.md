@@ -1,3 +1,10 @@
+## [2.2.9](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.2.8...v2.2.9) (2022-07-18)
+
+
+### Bug Fixes
+
+* should only show preview for http(s) links ([284de7b](https://github.com/pengx17/logseq-plugin-link-preview/commit/284de7bc81dd7aad07bf8088a7fb10030ca4fb55))
+
 ## [2.2.8](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.2.7...v2.2.8) (2022-06-29)
 
 

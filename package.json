@@ -1,6 +1,6 @@
 {
   "name": "logseq-plugin-link-preview",
-  "version": "2.2.8",
+  "version": "2.2.9",
   "main": "dist/index.html",
   "scripts": {
     "dev": "vite",

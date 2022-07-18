@@ -32,7 +32,8 @@ const useHoveringExternalLink = () => {
       if (
         target.tagName === "A" &&
         target.href &&
-        target.className.includes("external-link")
+        target.className.includes("external-link") &&
+        target.href.startsWith('http')
       ) {
         setAnchor(target);
         currentAnchor.current = target;

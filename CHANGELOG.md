@@ -1,3 +1,11 @@
+## [2.2.10](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.2.9...v2.2.10) (2023-02-27)
+
+
+### Bug Fixes
+
+* **package.json:** upgrade logseq sdk ([#124](https://github.com/pengx17/logseq-plugin-link-preview/issues/124)) ([4b020da](https://github.com/pengx17/logseq-plugin-link-preview/commit/4b020da77d08315b38fce86491867ecc88246eab))
+* upgrade logseq sdk ( [#124](https://github.com/pengx17/logseq-plugin-link-preview/issues/124) ) ([#125](https://github.com/pengx17/logseq-plugin-link-preview/issues/125)) ([78288eb](https://github.com/pengx17/logseq-plugin-link-preview/commit/78288ebab72db7936a9e6641a876650ebd72895d))
+
 ## [2.2.9](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.2.8...v2.2.9) (2022-07-18)
 
 

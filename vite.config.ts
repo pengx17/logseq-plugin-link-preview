@@ -11,6 +11,7 @@ export default defineConfig({
   plugins: [reactRefreshPlugin, logseqPlugin()],
   clearScreen: false,
   build: {
+    sourcemap: true,
     target: "esnext",
     minify: "esbuild",
   },

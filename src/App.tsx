@@ -5,9 +5,8 @@ import { HoverLinkPreview } from "./HoverLinkPreview";
 import { Prompt } from "./Prompt";
 import { useAppStateStore } from "./store";
 
-// FIXME: adapt for dynamic theme mode change
 const useAdaptBackgroundColor = () => {
-  React.useEffect(() => {
+  setTimeout(() => {
     if (frameElement) {
       const baseStyle = getComputedStyle(frameElement);
       const bgColor = baseStyle.getPropertyValue(
@@ -37,11 +36,21 @@ const useAdaptBackgroundColor = () => {
         secondaryTextColor
       );
     }
-  });
+  }, 2000);
 };
 
 function App() {
   useAdaptBackgroundColor();
+  setTimeout(() => {
+    // Listen for theme activated
+    logseq.App.onThemeChanged(() => {
+        useAdaptBackgroundColor();
+    });
+    // Listen for theme mode changed
+    logseq.App.onThemeModeChanged(() => {
+        useAdaptBackgroundColor();
+    });
+  }, 2000)
   const appState = useAppStateStore();
   return (
     <SWRConfig value={{ provider: localStorageProvider }}>

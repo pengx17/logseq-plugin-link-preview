@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.2.10...v2.3.0) (2024-03-25)
+
+
+### Features
+
+* **popup:** dynamic colors ([#126](https://github.com/pengx17/logseq-plugin-link-preview/issues/126)) ([fa4d810](https://github.com/pengx17/logseq-plugin-link-preview/commit/fa4d810268c2c305145584936da5bb5d18aa09f8))
+
 ## [2.2.10](https://github.com/pengx17/logseq-plugin-link-preview/compare/v2.2.9...v2.2.10) (2023-02-27)
 
 
